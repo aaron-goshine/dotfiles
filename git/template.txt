@@ -1,8 +1,5 @@
 type_of_commits(x): description 
 
-- actions
-
-[ticket: 0] - title
 
 #+++++++++++++++++++++++++++++++++++++++++
 # TYPE OF COMMITS WITH BASIC DESCRIPTION
