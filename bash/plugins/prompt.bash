@@ -1,4 +1,4 @@
-TITLE=$(get_ultra_rule_str ' ALWAYS RTFMP ' 0 0)
+TITLE=$(get_ultra_rule_str ' RTFMP ' 0 0)
 ULTRANAME=$(get_ultra_rule_str " ✿ ULTRA $(whoami | sed 's/\.[a-z]*$//' | awk '{print toupper($0)}') ✿ " 0 0)
 RULE=$(get_ultra_rule_str '' 0 0) 
 FMNO=$(get_ultra_rule_str ' ✿ ' 0 0) 
@@ -19,6 +19,7 @@ function ultra_prompt () {
 }
 
 echo "$ULTRANAME"
+echo "$TITLE"
 echo "$RULE"
 t1=$(get_ultra_rule_str ' Ultra dotfiles installer ' 0 0)
 
