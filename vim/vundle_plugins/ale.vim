@@ -12,7 +12,9 @@ let g:ale_lint_on_enter = 0
 " Put this in vimrc or a plugin file of your own.
 " After this is configured, :ALEFix will try and fix your JS code with ESLint.
 let g:ale_fixers = {
-      \   'javascript': ['eslint'],
+      \   'javascript': ['standard'],
+      \   'jsx': ['standard'],
+      \   'json': ['standard'],
       \   'python': ['autopep8', 'yapf'],
       \}
 
@@ -20,10 +22,10 @@ let g:ale_fixers = {
 " This is off by default.
 let g:ale_fix_on_save = 1
 let g:ale_linters = {
-      \'jsx': ['eslint'],
+      \'jsx': ['standard'],
       \'css': ['stylelint'],
       \'sass': ['stylelint'],
-      \'javascript': ['eslint'],
+      \'javascript': ['standard'],
       \'python': ['flake8', 'pylint'],
       \}
 let g:ale_linter_aliases = {'jsx': 'css'}
