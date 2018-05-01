@@ -6,6 +6,9 @@
 " =============================================================================
 
 " All of the plugins are installed with Vundle from this file.
+" Small custom functions.
+source ~/.vim/functions.vim
+
 source ~/.vim/vundle.vim
 
 " Automatically detect file types. (must turn on after Vundle)
@@ -19,7 +22,5 @@ source ~/.vim/config.vim
 source ~/.vim/commands.vim
 " All hotkeys, not dependant on plugins, are mapped here.
 source ~/.vim/mappings.vim
-" Small custom functions.
-source ~/.vim/functions.vim
 " Auto commands.
 source ~/.vim/autocmds.vim

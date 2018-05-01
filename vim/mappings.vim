@@ -90,19 +90,68 @@ inoremap JK <Esc>
 " Leader Mappings
 " ---------------
 
-nnoremap <silent> <leader><space>:noh<cr>:call clearmatches()<cr>
-nnoremap <silent> <leader>N <esc>:sbprevious<CR>
-nnoremap <silent> <leader>M <esc>:sbnext<CR>
-nnoremap <silent> <leader>n <esc>:bprevious<CR>
-nnoremap <silent> <leader>m <esc>:bnext<CR>
-nnoremap <silent> <leader>d <esc>:bdelete<CR>
-nnoremap <silent> <leader>b <esc>:ls<CR>
-vnoremap <silent> <leader>s :sort<CR>
-nnoremap <silent> <leader>w :w<CR>
-nnoremap <silent> <leader>l :set list!<CR>
-nnoremap <silent> <leader>e :Explore<CR>
-nnoremap <silent> <leader>f :CtrlP<CR>
+"nnoremap <silent> <leader><space>:noh<cr>:call clearmatches()<cr>
+"nnoremap <silent> <leader>N <esc>:sbprevious<CR>
+"nnoremap <silent> <leader>M <esc>:sbnext<CR>
+"nnoremap <silent> <leader>n <esc>:bprevious<CR>
+"nnoremap <silent> <leader>m <esc>:bnext<CR>
+"nnoremap <silent> <leader>d <esc>:bdelete<CR>
+"nnoremap <silent> <leader>b <esc>:ls<CR>
+"vnoremap <silent> <leader>s :sort<CR>
+"nnoremap <silent> <leader>w :w<CR>
+"nnoremap <silent> <leader>l :set list!<CR>
+"nnoremap <silent> <leader>e :Explore<CR>
+"nnoremap <silent> <leader>f :CtrlP<CR>
 
+nnoremap <Leader>pi :call PluginReloadAndRun("PluginInstall")<CR>
+nnoremap <Leader>pu :call PluginReloadAndRun("PluginInstall!")<CR>
+nnoremap <Leader>pc :call PluginReloadAndRun("PluginClean")<CR>
+nnoremap <silent> <leader>m :CtrlPMRUFiles<CR>
+nnoremap <silent> <leader>b :CtrlPBuffer<CR>
+nnoremap <silent> <leader>f :CtrlP<CR>
+vmap  <expr>  <LEFT>   DVB_Drag('left')
+vmap  <expr>  <RIGHT>  DVB_Drag('right')
+vmap  <expr>  <DOWN>   DVB_Drag('down')
+vmap  <expr>  <UP>     DVB_Drag('up')
+vmap  <expr>  D        DVB_Duplicate()
+
+nnoremap <leader>af :Ag<space>
+" Leader Commands
+nnoremap <silent><leader>. :call Fzf_dev()<CR>
+nnoremap <leader>gf :GFiles<CR>
+nnoremap <leader>gm :GFiles?<CR>
+nnoremap <leader>bl :BLines<CR>
+
+nnoremap <Leader>t= :Tabularize assignment<CR>
+vnoremap <Leader>t= :Tabularize assignment<CR>
+nnoremap <Leader>t: :Tabularize symbol<CR>
+vnoremap <Leader>t: :Tabularize symbol<CR>
+nnoremap <Leader>t, :Tabularize comma<CR>
+vnoremap <Leader>t, :Tabularize comma<CR>
+
+nnoremap <silent><leader>cc :TComment<CR>
+vnoremap <silent><leader>cc :TComment<CR>
+nnoremap <silent><leader>cb :TCommentBlock<CR>
+vnoremap <silent><leader>cb :TCommentBlock<CR>
+
+nnoremap <Leader>gc :Gcommit -v<CR>
+nnoremap <Leader>gca :Gcommit -a -v<CR>
+nnoremap <Leader>gw :Gwrite<CR>
+nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gp :Git push<CR>
+" Mnemonic, gu = Git Update
+nnoremap <Leader>gu :Git pull<CR>
+nnoremap <Leader>gd :Gvdiff<CR>
+" Exit a diff by closing the diff window
+nnoremap <Leader>gx :wincmd h<CR>:q<CR>
+" Start git command
+nnoremap <leader>gi :Git<space>
+
+nmap <leader>gj <plug>(signify-next-hunk)
+nmap <leader>gk <plug>(signify-prev-hunk)
+
+vmap <expr>  ++  VMATH_YankAndAnalyse()
+nmap         ++  vip++
 " Format a json file with Python's built in json.tool.
 nnoremap <leader>fj :%!python -m json.tool<CR>
 
