@@ -11,7 +11,6 @@ t1=$(get_ultra_rule_str ' Ultra dotfiles installer ' 0 0)
 echo "$t1"
 
 DOTDIR="$HOME/.dotfiles"
-LIGHTWVIM=0
 TREW=1
 BAD_FILE=85
 
@@ -91,24 +90,9 @@ success "done"
 t1=$(get_ultra_rule_str 'Installing vim config symlinks' 0 0)
 echo "$t1"
 
-while getopts ":l" opt; do
-  case $opt in
-    l)
-      LIGHTWVIM=1
-      ;;
-  esac
-done
-
 ln -fs $DOTDIR/vim ~/.config/nvim
-
-if [ $FAST_MACHINE ]
-then
-  ln -fs $DOTDIR/vim/vimrc.vim ~/.vimrc
-  ln -fs $DOTDIR/vim/vimrc.vim  ~/.config/nvim/init.vim
-else
-  ln -fs $DOTDIR/vim/light_weight_vimrc.vim ~/.vimrc
-  ln -fs $DOTDIR/vim/light_weight_vimrc.vim ~/.config/nvim/init.vim
-fi
+ln -fs $DOTDIR/vim/vimrc.vim ~/.vimrc
+ln -fs $DOTDIR/vim/vimrc.vim  ~/.config/nvim/init.vim
 
 success "done"
 #==========================================================
@@ -164,7 +148,6 @@ select opt in $OPTIONS; do
 exit
 done
 unset DOTDIR
-unset LIGHTWVIM
 unset TREW
 unset BAD_FILE
 sleep 3
