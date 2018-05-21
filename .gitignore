@@ -2,9 +2,7 @@
 .maxcrc
 bin/php*
 config/.isolated-storage/
-config/configstore/snyk.json
-config/configstore/update-notifier-nodemon.json
-config/configstore/update-notifier-npm.json
+config/configstore/
 config/direnv
 config/git/gitk
 config/mycli/history
