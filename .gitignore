@@ -11,6 +11,7 @@ config/pgcli/history
 config/pgcli/log
 config/ranger/bookmarks
 config/ranger/history
+config/thefuck/
 ipython/profile_default/db
 ipython/profile_default/history.sqlite
 vifm/vifminfo
