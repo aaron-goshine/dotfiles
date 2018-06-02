@@ -220,5 +220,3 @@ alias unmute="osascript -e 'set volume output muted false'"
 ## curl http://downloads.com/hugefile.zip; lmk
 alias lmk="say 'Process complete.'"
 
-# remove all docker stuff
-alias docx="docker rmi -f $(docker images -q | xargs) &&  docker rm -f $(docker ps -a -q | xargs)"

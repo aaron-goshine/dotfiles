@@ -207,5 +207,14 @@ function ultra_title() {
   rule
 }
 
-
+# remove all docker stuff
+function docx() {
+  echo "Removing all docker images and containers"
+  rule
+  docker image rm -f `docker images -q | xargs`
+  docker rm -f `docker container ls -a -q | xargs`
+  docker rm -f $(docker ps -a -q | xargs)
+  rule
+  echo "done!"
+}
 
