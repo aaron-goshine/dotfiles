@@ -191,7 +191,7 @@ highlight default link taskwarrior_uuid        VarId
 highlight default link taskwarrior_urgency     Todo
 "==================================
 Plugin 'tomtom/tcomment_vim'
-let g:tcommentMaps = 0
+let g:tcomment_maps = 0
 "==================================
 Plugin 'ternjs/tern_for_vim'
 "==================================
