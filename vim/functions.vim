@@ -322,3 +322,14 @@ function! Fzf_dev()
     execute 'silent e' file_path
   endfunction
 endfunction
+
+
+
+function! Encrypt ()
+  %!openssl enc -aes-256-cbc -a -salt
+endfunction
+
+function! Decrypt()
+  %!openssl enc -d -aes-256-cbc -a
+endfunction
+
