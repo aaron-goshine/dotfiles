@@ -117,11 +117,6 @@ vmap  <expr>  D        DVB_Duplicate()
 
 nnoremap <leader>af :Ag<space>
 " Leader Commands
-nnoremap <silent><leader>. :call Fzf_dev()<CR>
-nnoremap <leader>gf :GFiles<CR>
-nnoremap <leader>gm :GFiles?<CR>
-nnoremap <leader>bl :BLines<CR>
-
 nnoremap <Leader>t= :Tabularize assignment<CR>
 vnoremap <Leader>t= :Tabularize assignment<CR>
 nnoremap <Leader>t: :Tabularize symbol<CR>

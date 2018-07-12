@@ -120,10 +120,6 @@ let g:DVB_TrimWS = 1
 "==================================
 Plugin 'mattn/emmet-vim'
 "==================================
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
-let $FZF_DEFAULT_COMMAND = 'ag -g ""'
-"==================================
 Plugin 'othree/html5.vim'
 "==================================
 Plugin 'indenthtml.vim'
@@ -303,5 +299,11 @@ let g:signify_update_on_bufenter = 0
 let g:signify_sign_overwrite = 0
 "==================================
 Plugin 'Shougo/vimproc.vim.git'
+"==================================
+Plugin 'francoiscabrol/ranger.vim'
+"==================================
+Plugin 'artur-shaik/vim-javacomplete2'
+"==================================
+Plugin 'tpope/vim-classpath'
+"==================================
 call vundle#end()
-

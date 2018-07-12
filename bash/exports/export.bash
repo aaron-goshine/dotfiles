@@ -6,14 +6,17 @@ export PATH="$PATH:~/.local/bin:~/bin:~/.cask/bin:/usr/local/MacGPG2/bin:/usr/lo
 export GREP_OPTIONS="--color=auto"
 export CLICOLOR=1
 export TERM=xterm-256color
-export MC_SKIN="~/.config/mc/jellybean.ini"
 export BYOBU_PREFIX="/usr/local"
 export EDITOR="vim"
+export VISUAL="vim"
+export VIMCONFIG="$HOME/.vim"
+export VIMDATA="$HOME/.vim"
 
-export PROJECT_HOME="~/Project"
-export WORKON_HOME="~/.virtualenvs"
-export VIRTENV="~/.virtualenvs"
-export PYTHONSTARTUP="~/.pystartup"
+export PROJECT_HOME="$HOME/Project"
+export WORKON_HOME="$HOME/.virtualenvs"
+export VIRTENV="$HOME/.virtualenvs"
+export PYTHONSTARTUP="$HOME/.dotfiles/xrc/pystartup"
+
 export NODE_REPL_HISTORY_FILE="~/.node_history";
 export HISTSIZE="32768";
 export HISTFILESIZE="${HISTSIZE}";
