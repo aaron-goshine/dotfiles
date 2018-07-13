@@ -306,4 +306,6 @@ Plugin 'artur-shaik/vim-javacomplete2'
 "==================================
 Plugin 'tpope/vim-classpath'
 "==================================
+Plugin 'rizzatti/dash.vim'
+"==================================
 call vundle#end()
