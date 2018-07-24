@@ -234,3 +234,4 @@ nmap <silent> --h "=HaskellModuleHeader()<CR>:0put =<CR>
 " search current file for visually selected  word
 vnoremap // y/<C-R>"<CR>
 
+nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<cr>
