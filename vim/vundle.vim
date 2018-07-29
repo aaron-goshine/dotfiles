@@ -95,7 +95,7 @@ let g:ale_pattern_options = {
 " If you configure g:ale_pattern_options outside of vimrc, you need this.
 let g:ale_pattern_options_enabled = 1
 "==================================
-Plugin 'Rykka/colorv.vim'
+Plugin 'aaron-goshine/colorv.vim'
 let g:colorv_preview_ftype = 'css,javascript,scss,stylus,html,jsx'
 Plugin 'ctrlpvim/ctrlp.vim'
 " Ensure Ctrl-P isn't bound by default
