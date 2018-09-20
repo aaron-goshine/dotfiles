@@ -1,5 +1,13 @@
 type_of_commits(x): description 
 
+# Example
+
+#feat: add hat wobble
+#^--^  ^------------^
+#|     |
+#|     +-> Summary in present tense.
+#|
+#+-------> Type: chore, docs, feat, fix, refactor, style, or test.
 
 #+++++++++++++++++++++++++++++++++++++++++
 # TYPE OF COMMITS WITH BASIC DESCRIPTION
@@ -11,5 +19,4 @@ type_of_commits(x): description
 # patch - apply patches, re-bases or fixing merge conflicts
 # refactor - a commit that does not modifying the behaviour or the application
 # style  - modifications to code style
-# e-test - change related to end to end test
-# u-test - change related to unit test
+# test - change related to test or adding new test
