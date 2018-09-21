@@ -43,9 +43,10 @@ do
   slimlinker $DOTDIR/xrc/$FILE
 done;
 
-rm -rf ~/.task ~/.gnupg ~/.password-store ~/bin 2> /dev/null
+rm -rf ~/.task ~/.timewarrior ~/.gnupg ~/.password-store ~/bin 2> /dev/null
 ln -s $DOTDIR/bin/ ~/bin
 ln -s ~/Library/Mobile\ Documents/com~apple~CloudDocs/task/ ~/.task
+ln -s ~/Library/Mobile\ Documents/com~apple~CloudDocs/timewarrior/ ~/.timewarrior
 ln -s ~/Library/Mobile\ Documents/com~apple~CloudDocs/roger/.gnupg ~/.gnupg
 ln -s ~/Library/Mobile\ Documents/com~apple~CloudDocs/roger/.password-store ~/.password-store
 
