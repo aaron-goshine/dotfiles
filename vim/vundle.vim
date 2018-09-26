@@ -71,20 +71,23 @@ let g:ale_sign_warning = '⚠'
 let g:ale_lint_on_enter = 0
 " Put this in vimrc or a plugin file of your own.
 " After this is configured, :ALEFix will try and fix your JS code with ESLint.
-" let g:ale_fixers = {
-"       \   'javascript': ['standard'],
-"       \   'jsx': ['standard'],
-"       \   'json': ['standard'],
-"       \   'python': ['autopep8', 'yapf'],
-"       \}
+
+if $LINTFIX == 'true'
+  let g:ale_fixers = {
+        \   'javascript': [$JSLINTER],
+        \   'jsx': [$JSLINTER],
+        \   'json': [$JSLINTER],
+        \   'python': ['autopep8', 'yapf'],
+        \}
+endif
 " Set this setting in vimrc if you want to fix files automatically on save.
 " This is off by default.
 let g:ale_fix_on_save = 1
 let g:ale_linters = {
-      \'jsx': ['standard'],
+      \'jsx': [$JSLINTER],
+      \'javascript': [$JSLINTER],
       \'css': ['stylelint'],
       \'sass': ['stylelint'],
-      \'javascript': ['standard'],
       \'python': ['flake8', 'pylint'],
       \}
 let g:ale_linter_aliases = {'jsx': 'css'}
