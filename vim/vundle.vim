@@ -8,8 +8,6 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
 "==================================
 " let Vundle manage Vundle, required
@@ -62,8 +60,6 @@ let g:ycm_filetype_blacklist = {
       \ 'mail': 1
       \}
 "==================================
-Plugin 'rking/ag.vim'
-"==================================
 Plugin 'w0rp/ale'
 let g:ale_sign_error = '✖'
 let g:ale_sign_warning = '⚠'
@@ -71,6 +67,7 @@ let g:ale_sign_warning = '⚠'
 let g:ale_lint_on_enter = 0
 " Put this in vimrc or a plugin file of your own.
 " After this is configured, :ALEFix will try and fix your JS code with ESLint.
+
 
 if $LINTFIX == 'true'
   let g:ale_fixers = {
@@ -98,8 +95,6 @@ let g:ale_pattern_options = {
 " If you configure g:ale_pattern_options outside of vimrc, you need this.
 let g:ale_pattern_options_enabled = 1
 "==================================
-Plugin 'aaron-goshine/colorv.vim'
-let g:colorv_preview_ftype = 'css,javascript,scss,stylus,html,jsx'
 Plugin 'ctrlpvim/ctrlp.vim'
 " Ensure Ctrl-P isn't bound by default
 let g:ctrlp_map = ''
@@ -117,77 +112,18 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 " ag is fast enough that CtrlP doesn't need to cache
 let g:ctrlp_use_caching = 0
 "==================================
-Plugin 'aaron-goshine/dragvisualsvim'
-" Remove any introduced trailing whitespace after moving...
-let g:DVB_TrimWS = 1
-"==================================
-Plugin 'mattn/emmet-vim'
-"==================================
 Plugin 'othree/html5.vim'
 "==================================
 Plugin 'indenthtml.vim'
-
-" Setup indenthtml to propertly indent html. Without this, formatting doesn't
-" work on html.
 let g:html_indent_inctags = "html,body,head,tbody"
 let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
 "==================================
 Plugin 'nanotech/jellybeans.vim'
-" Make cssAttrs (center, block, etc.) the same color as units
 hi! link cssAttr Constant
-"==================================
-Plugin 'aaron-goshine/mathvim'
-"==================================
-Plugin 'ervandew/supertab'
 "==================================
 Plugin 'aaron-goshine/swapvim'
 "==================================
-Plugin 'godlygeek/tabular'
-Plugin 'blindFS/vim-taskwarrior'
-" default task report type
-let g:task_report_name     = 'next'
-" custom reports have to be listed explicitly to make them available
-let g:task_report_command  = []
-" whether the field under the cursor is highlighted
-let g:task_highlight_field = 1
-" can not make change to task data when set to 1
-let g:task_readonly        = 0
-" vim built-in term for task undo in gvim
-let g:task_gui_term        = 1
-" allows user to override task configurations. Seperated by space. Defaults to ''
-let g:task_rc_override     = 'rc.defaultwidth=999'
-" default fields to ask when adding a new task
-let g:task_default_prompt  = ['due', 'description']
-" whether the info window is splited vertically
-let g:task_info_vsplit     = 0
-" info window size
-let g:task_info_size       = 15
-" info window position
-let g:task_info_position   = 'belowright'
-" directory to store log files defaults to taskwarrior data.location
-let g:task_log_directory   = '~/.task'
-" max number of historical entries
-let g:task_log_max         = '20'
-" forward arrow shown on statusline
-let g:task_left_arrow      = ' <<'
-" backward arrow ...
-let g:task_left_arrow      = '>> '
-highlight default link taskwarrior_tablehead   Tabline
-highlight default link taskwarrior_field       IncSearch
-highlight default link taskwarrior_selected    Visual
-highlight default link taskwarrior_id          VarId
-highlight default link taskwarrior_project     String
-highlight default link taskwarrior_Status      Include
-highlight default link taskwarrior_priority    Class
-highlight default link taskwarrior_due         Todo
-highlight default link taskwarrior_end         Keyword
-highlight default link taskwarrior_description Normal
-highlight default link taskwarrior_entry       Special
-highlight default link taskwarrior_depends     Todo
-highlight default link taskwarrior_tags        Keyword
-highlight default link taskwarrior_uuid        VarId
-highlight default link taskwarrior_urgency     Todo
 "==================================
 Plugin 'tomtom/tcomment_vim'
 let g:tcomment_maps = 0
@@ -195,12 +131,6 @@ let g:tcomment_maps = 0
 Plugin 'ternjs/tern_for_vim'
 "==================================
 Plugin 'freitass/todo.txt-vim'
-"==================================
-Plugin 'SirVer/ultisnips'
-let g:UltiSnipsSnippetDirectories=['vim_ulti_snippets']
-let g:UltiSnipsExpandTrigger='<C-j>'
-let g:UltiSnipsJumpForwardTrigger='<C-j>'
-let g:UltiSnipsJumpBackwardTrigger='<C-h>'
 "==================================
 Plugin 'bling/vim-airline'
 "let g:airline_theme = 'jellybeans'
@@ -228,8 +158,6 @@ let g:airline_section_z = '%3p%% %{substitute(line("."), "\\v(\\d)((\\d\\d\\d)+\
 Plugin 'hail2u/vim-css3-syntax'
 "==================================
 Plugin 'chrisbra/csv.vim'
-"==================================
-Plugin 'tpope/vim-eunuch'
 "==================================
 Plugin 'aaron-goshine/vim-follow-my-lead'
 let g:fml_all_sources = 1
@@ -307,6 +235,78 @@ Plugin 'artur-shaik/vim-javacomplete2'
 "==================================
 Plugin 'tpope/vim-classpath'
 "==================================
-Plugin 'rizzatti/dash.vim'
-"==================================
+if $FAST_MACHINE == 1
+  "==================================
+  Plugin 'ervandew/supertab'
+  "==================================
+  Plugin 'aaron-goshine/mathvim'
+  "==================================
+  Plugin 'aaron-goshine/colorv.vim'
+  "==================================
+  Plugin 'rking/ag.vim'
+  let g:colorv_preview_ftype = 'css,javascript,scss,stylus,html,jsx'
+  "==================================
+  Plugin 'aaron-goshine/dragvisualsvim'
+  " Remove any introduced trailing whitespace after moving...
+  let g:DVB_TrimWS = 1
+  "==================================
+  Plugin 'mattn/emmet-vim'
+  "==================================
+  Plugin 'godlygeek/tabular'
+  "==================================
+  Plugin 'blindFS/vim-taskwarrior'
+  " default task report type
+  let g:task_report_name     = 'next'
+  " custom reports have to be listed explicitly to make them available
+  let g:task_report_command  = []
+  " whether the field under the cursor is highlighted
+  let g:task_highlight_field = 1
+  " can not make change to task data when set to 1
+  let g:task_readonly        = 0
+  " vim built-in term for task undo in gvim
+  let g:task_gui_term        = 1
+  " allows user to override task configurations. Seperated by space. Defaults to ''
+  let g:task_rc_override     = 'rc.defaultwidth=999'
+  " default fields to ask when adding a new task
+  let g:task_default_prompt  = ['due', 'description']
+  " whether the info window is splited vertically
+  let g:task_info_vsplit     = 0
+  " info window size
+  let g:task_info_size       = 15
+  " info window position
+  let g:task_info_position   = 'belowright'
+  " directory to store log files defaults to taskwarrior data.location
+  let g:task_log_directory   = '~/.task'
+  " max number of historical entries
+  let g:task_log_max         = '20'
+  " forward arrow shown on statusline
+  let g:task_left_arrow      = ' <<'
+  " backward arrow ...
+  let g:task_left_arrow      = '>> '
+  highlight default link taskwarrior_tablehead   Tabline
+  highlight default link taskwarrior_field       IncSearch
+  highlight default link taskwarrior_selected    Visual
+  highlight default link taskwarrior_id          VarId
+  highlight default link taskwarrior_project     String
+  highlight default link taskwarrior_Status      Include
+  highlight default link taskwarrior_priority    Class
+  highlight default link taskwarrior_due         Todo
+  highlight default link taskwarrior_end         Keyword
+  highlight default link taskwarrior_description Normal
+  highlight default link taskwarrior_entry       Special
+  highlight default link taskwarrior_depends     Todo
+  highlight default link taskwarrior_tags        Keyword
+  highlight default link taskwarrior_uuid        VarId
+  highlight default link taskwarrior_urgency     Todo
+  "==================================
+  Plugin 'SirVer/ultisnips'
+  let g:UltiSnipsSnippetDirectories=['vim_ulti_snippets']
+  let g:UltiSnipsExpandTrigger='<C-j>'
+  let g:UltiSnipsJumpForwardTrigger='<C-j>'
+  let g:UltiSnipsJumpBackwardTrigger='<C-h>'
+  "==================================
+  Plugin 'tpope/vim-eunuch'
+
+endif
+
 call vundle#end()
