@@ -24,7 +24,8 @@ export HISTCONTROL="ignoreboth";
 export LESS_TERMCAP_md="${yellow}";
 export MANPAGER="less -X";
 export GREP_COLOR='1;33'
-
+export JSLINTER="eslint"
+export LINTFIX="true"
 
 shopt -s histappend                                      # append to bash_history if Terminal.app quits
 export HISTCONTROL=${HISTCONTROL:-ignorespace:erasedups} # erase duplicates; alternative option: export HISTCONTROL=ignoredups
