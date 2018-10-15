@@ -237,6 +237,8 @@ Plugin 'tpope/vim-classpath'
 "==================================
 if $FAST_MACHINE == 1
   "==================================
+  Plugin 'ryanoasis/vim-devicons'
+  "==================================
   Plugin 'ervandew/supertab'
   "==================================
   Plugin 'aaron-goshine/mathvim'
