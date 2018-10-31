@@ -33,7 +33,6 @@ function slimlinker() {
 slimlinker $DOTDIR/bin/
 slimlinker $DOTDIR/config/ 
 slimlinker $DOTDIR/tmux/
-slimlinker $DOTDIR/vifm/
 slimlinker $DOTDIR/vim/
 slimlinker $DOTDIR/ipython/
 slimlinker $DOTDIR/git/gitconfig
@@ -43,25 +42,6 @@ do
   slimlinker $DOTDIR/xrc/$FILE
 done;
 
-rm -rf ~/.task ~/.timewarrior ~/.gnupg ~/.password-store ~/bin 2> /dev/null
-ln -s $DOTDIR/bin/ ~/bin
-ln -s ~/Library/Mobile\ Documents/com~apple~CloudDocs/task/ ~/.task
-ln -s ~/Library/Mobile\ Documents/com~apple~CloudDocs/timewarrior/ ~/.timewarrior
-ln -s ~/Library/Mobile\ Documents/com~apple~CloudDocs/roger/.gnupg ~/.gnupg
-ln -s ~/Library/Mobile\ Documents/com~apple~CloudDocs/roger/.password-store ~/.password-store
-
-success "done"
-
-#==========================================================
-t1=$(get_ultra_rule_str ' Installing homebrew packages ' 0 0)
-echo "$t1"
-cd $DOTDIR
-xcode-select --install
-brew update
-brew tap Homebrew/bundle
-brew bundle dump 2> /dev/null
-brew bundle 2> /dev/null
-cd -
 success "done"
 
 #==========================================================
@@ -100,8 +80,8 @@ success "done"
 t1=$(get_ultra_rule_str 'Installing vim plugins' 0 0)
 echo "$t1"
 
-rm -rf ~/.vim/bundle/Vundle.vim
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+#rm -rf ~/.vim/bundle/Vundle.vim
+#git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 if test $(which mvim)
 then

@@ -191,7 +191,11 @@ nnoremap <silent> <m-w> :close<CR>
 
 " Toggle paste mode with F5
 nnoremap <silent> <F5> :set paste!<CR>
-
+" Copy and paste
+vmap <C-c> "+yi
+vmap <C-x> "+c
+vmap <C-v> c<ESC>"+p
+imap <C-v> <ESC>"+pa
 " Insert date
 iabbrev ddate <C-R>=strftime("%Y-%m-%d")<CR>
 

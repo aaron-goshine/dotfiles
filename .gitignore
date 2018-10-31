@@ -11,6 +11,7 @@ config/pgcli/history
 config/pgcli/log
 config/ranger/bookmarks
 config/ranger/history
+config/google-chrome/
 config/thefuck/
 ipython/profile_default/db
 ipython/profile_default/history.sqlite
@@ -28,3 +29,4 @@ vim/sessions/*
 vim/undo/*
 vim/vim
 vim/vundle_plugins/custom
+

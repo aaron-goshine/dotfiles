@@ -1,194 +1,353 @@
-tap "caskroom/cask"
-tap "go-delve/delve"
-tap "homebrew/boneyard"
-tap "homebrew/bundle"
-tap "homebrew/core"
-tap "homebrew/dupes"
-tap "homebrew/php"
-tap "homebrew/science"
-tap "homebrew/services"
-tap "homebrew/versions"
-tap "neovim/neovim"
-tap "phinze/cask"
-cask "xquartz"
-brew "activemq"
-brew "libyaml"
-brew "readline"
-brew "sqlite"
-brew "ansible"
-brew "aspcud"
-brew "freetype"
-brew "fontconfig"
-brew "gettext"
-brew "libffi"
-brew "glib"
-brew "cairo"
-brew "pkg-config"
-brew "gobject-introspection"
-brew "autoconf"
-brew "automake"
-brew "xz"
-brew "python"
-brew "awscli"
-brew "bats"
-brew "bdw-gc"
-brew "boost"
-brew "ghc"
-brew "cabal-install"
-brew "cask"
-brew "gmp"
-brew "isl"
-brew "cloog"
-brew "cmake"
-brew "cppunit"
-brew "cscope"
-brew "dialog"
-brew "direnv"
-brew "libgpg-error"
-brew "libassuan"
-brew "libgcrypt"
-brew "libksba"
-brew "pth"
-brew "dirmngr"
-brew "exercism"
-brew "fasd"
-brew "flow"
-brew "fortune"
-brew "fzf"
-brew "mpfr"
-brew "libmpc"
-brew "gcc"
-brew "jpeg"
-brew "libtiff"
-brew "git"
-brew "icu4c"
-brew "harfbuzz"
-brew "pango"
-brew "shared-mime-info"
-brew "lua@5.1"
-brew "lua"
-brew "git-annex"
-brew "gmp@4"
-brew "gnu-getopt"
-brew "gnu-typist"
-brew "nettle"
-brew "gnutls"
-brew "libusb"
-brew "pinentry"
-brew "gnupg", link: false
-brew "gnuplot"
-brew "go"
-brew "gpg-agent"
-brew "gradle"
-brew "libtool"
-brew "graphviz"
-brew "grc"
-brew "haskell-stack"
-brew "hh"
-brew "highlight"
-brew "htop"
-brew "httpie"
-brew "hub"
-brew "iftop"
-brew "isl@0.11"
-brew "isl@0.12"
-brew "ispell"
-brew "jemalloc"
-brew "oniguruma"
-brew "jq"
-brew "jrnl"
-brew "node"
-brew "jsdoc3"
-brew "klavaro"
-brew "leafnode"
-brew "leiningen"
-brew "libcroco"
-brew "libevent"
-brew "libidn2"
-brew "mpfr@2"
-brew "libmpc@0.8"
-brew "libnet"
-brew "librsvg"
-brew "libssh2"
-brew "libtermkey"
-brew "libupnp"
-brew "libusb-compat"
-brew "libvterm"
-brew "libxml2"
-brew "links"
-brew "luajit"
-brew "lynx"
-brew "macvim"
-brew "mad"
-brew "maven"
-brew "mhash"
-brew "mcrypt"
-brew "mercurial"
-brew "s-lang"
-brew "midnight-commander"
-brew "mongodb"
-brew "mycli"
-brew "mysql", restart_service: true
-brew "ncurses"
-brew "nano"
-brew "unibilium"
-brew "neovim"
-brew "ngrep"
-brew "nmap"
-brew "numpy", link: false
-brew "nvm"
-brew "opam"
-brew "openssh"
-brew "openssl@1.1"
-brew "tree"
-brew "pass"
-brew "pcre2"
-brew "perl"
-brew "pgcli"
-brew "ponysay"
-brew "postgresql", restart_service: true
-brew "postgresql@9.4"
-brew "pwgen"
-brew "r"
-brew "ranger"
-brew "reattach-to-user-namespace"
-brew "rlwrap"
-brew "sbcl"
-brew "sox"
-brew "ssh-copy-id"
-brew "swift"
-brew "task"
-brew "tcptraceroute"
-brew "the_silver_searcher"
-brew "thefuck"
-brew "tig"
-brew "tmux"
-brew "typespeed"
-brew "unar"
-brew "unixodbc"
-brew "utf8proc"
-brew "vifm"
-brew "vim"
-brew "vit"
-brew "w3m"
-brew "watch"
-brew "watchman"
-brew "wget"
-brew "z"
-brew "homebrew/php/composer"
-brew "homebrew/php/psysh"
-brew "mericurial"
-brew "hg"
-cask "adpassmon"
-cask "betterzipql"
-cask "iterm2"
-cask "qlcolorcode"
-cask "qlimagesize"
-cask "qlmarkdown"
-cask "qlprettypatch"
-cask "qlstephen"
-cask "qtpass"
-cask "quicklook-csv"
-cask "quicklook-json"
-cask "suspicious-package"
-cask "vlc"
+sudo apt install activemq
+
+sudo apt install libyaml
+
+sudo apt install readline
+
+sudo apt install sqlite
+
+sudo apt install ansible
+
+sudo apt install aspcud
+
+sudo apt install freetype
+
+sudo apt install fontconfig
+
+sudo apt install gettext
+
+sudo apt install libffi
+
+sudo apt install glib
+
+sudo apt install cairo
+
+sudo apt install pkg-config
+
+sudo apt install gobject-introspection
+
+sudo apt install autoconf
+
+sudo apt install automake
+
+sudo apt install xz
+
+sudo apt install python
+
+sudo apt install awscli
+
+sudo apt install bats
+
+sudo apt install bdw-gc
+
+sudo apt install boost
+
+sudo apt install ghc
+
+sudo apt install cabal-install
+
+sudo apt install cask
+
+sudo apt install gmp
+
+sudo apt install isl
+
+sudo apt install cloog
+
+sudo apt install cmake
+
+sudo apt install cppunit
+
+sudo apt install cscope
+
+sudo apt install dialog
+
+sudo apt install direnv
+
+sudo apt install libgpg-error
+
+sudo apt install libassuan
+
+sudo apt install libgcrypt
+
+sudo apt install libksba
+
+sudo apt install pth
+
+sudo apt install dirmngr
+
+sudo apt install exercism
+
+sudo apt install fasd
+
+sudo apt install flow
+
+sudo apt install fortune
+
+sudo apt install fzf
+
+sudo apt install mpfr
+
+sudo apt install libmpc
+
+sudo apt install gcc
+
+sudo apt install jpeg
+
+sudo apt install libtiff
+
+sudo apt install git
+
+sudo apt install icu4c
+
+sudo apt install harfbuzz
+
+sudo apt install pango
+
+sudo apt install shared-mime-info
+
+sudo apt install lua@5.1
+
+sudo apt install lua
+
+sudo apt install git-annex
+
+sudo apt install gmp@4
+
+sudo apt install gnu-getopt
+
+sudo apt install gnu-typist
+
+sudo apt install nettle
+
+sudo apt install gnutls
+
+sudo apt install libusb
+
+sudo apt install pinentry
+
+sudo apt install gnupg, link: false
+
+sudo apt install gnuplot
+
+sudo apt install go
+
+sudo apt install gpg-agent
+
+sudo apt install gradle
+
+sudo apt install libtool
+
+sudo apt install graphviz
+
+sudo apt install grc
+
+sudo apt install haskell-stack
+
+sudo apt install hh
+
+sudo apt install highlight
+
+sudo apt install htop
+
+sudo apt install httpie
+
+sudo apt install hub
+
+sudo apt install iftop
+
+sudo apt install isl@0.11
+
+sudo apt install isl@0.12
+
+sudo apt install ispell
+
+sudo apt install jemalloc
+
+sudo apt install oniguruma
+
+sudo apt install jq
+
+sudo apt install jrnl
+
+sudo apt install node
+
+sudo apt install jsdoc3
+
+sudo apt install klavaro
+
+sudo apt install leafnode
+
+sudo apt install leiningen
+
+sudo apt install libcroco
+
+sudo apt install libevent
+
+sudo apt install libidn2
+
+sudo apt install mpfr@2
+
+sudo apt install libmpc@0.8
+
+sudo apt install libnet
+
+sudo apt install librsvg
+
+sudo apt install libssh2
+
+sudo apt install libtermkey
+
+sudo apt install libupnp
+
+sudo apt install libusb-compat
+
+sudo apt install libvterm
+
+sudo apt install libxml2
+
+sudo apt install links
+
+sudo apt install luajit
+
+sudo apt install lynx
+
+sudo apt install macvim
+
+sudo apt install mad
+
+sudo apt install maven
+
+sudo apt install mhash
+
+sudo apt install mcrypt
+
+sudo apt install mercurial
+
+sudo apt install s-lang
+
+sudo apt install midnight-commander
+
+sudo apt install mongodb
+
+sudo apt install mycli
+
+sudo apt install mysql, restart_service: true
+
+sudo apt install ncurses
+
+sudo apt install nano
+
+sudo apt install unibilium
+
+sudo apt install neovim
+
+sudo apt install ngrep
+
+sudo apt install nmap
+
+sudo apt install numpy, link: false
+
+sudo apt install nvm
+
+sudo apt install opam
+
+sudo apt install openssh
+
+sudo apt install openssl@1.1
+
+sudo apt install tree
+
+sudo apt install pass
+
+sudo apt install pcre2
+
+sudo apt install perl
+
+sudo apt install pgcli
+
+sudo apt install ponysay
+
+sudo apt install postgresql, restart_service: true
+
+sudo apt install postgresql@9.4
+
+sudo apt install pwgen
+
+sudo apt install r
+
+sudo apt install ranger
+
+sudo apt install reattach-to-user-namespace
+
+sudo apt install rlwrap
+
+sudo apt install sbcl
+
+sudo apt install sox
+
+sudo apt install ssh-copy-id
+
+sudo apt install swift
+
+sudo apt install task
+
+sudo apt install tcptraceroute
+
+sudo apt install the_silver_searcher
+
+sudo apt install thefuck
+
+sudo apt install tig
+
+sudo apt install tmux
+
+sudo apt install typespeed
+
+sudo apt install unar
+
+sudo apt install unixodbc
+
+sudo apt install utf8proc
+
+sudo apt install vifm
+
+sudo apt install vim
+
+sudo apt install vit
+
+sudo apt install w3m
+
+sudo apt install watch
+
+sudo apt install watchman
+
+sudo apt install wget
+
+sudo apt install z
+
+sudo apt install composer
+
+
+sudo apt install mericurial
+# Get the compile-dependencies of vim
+sudo apt-get build-dep vim
+# If you haven't got mercurial, get it
+sudo apt-get install mercurial
+# Get the source
+hg clone https://vim.googlecode.com/hg/ vim_source
+# Compile it
+cd vim_source
+./configure \
+    --enable-perlinterp=dynamic \
+    --enable-pythoninterp=dynamic \
+    --enable-rubyinterp=dynamic \
+    --enable-cscope \
+    --enable-gui=auto \
+    --enable-gtk2-check \
+    --enable-gnome-check \
+    --with-features=huge \
+    --with-x \
+    --with-compiledby="Your Name <youremail@domain.com>" \
+    --with-python-config-dir=/usr/lib/python2.7/config
+make && sudo make install
