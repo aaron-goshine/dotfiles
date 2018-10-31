@@ -22,7 +22,6 @@ export HISTFILESIZE="${HISTSIZE}";
 export HISTCONTROL="ignoreboth";
 export LESS_TERMCAP_md="${yellow}";
 export MANPAGER="less -X";
-export GREP_COLOR='1;33'
 export JSLINTER="eslint"
 export LINTFIX="true"
 

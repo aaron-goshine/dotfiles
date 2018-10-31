@@ -111,7 +111,6 @@ alias vi='vim'
 alias dot='cd ~/.dotfiles/'
 alias todo='vim ~/.dotfiles/todo/'
 
-alias pxx='vim  ~/Library/Mobile\ Documents/com~apple~CloudDocs/roger'
 # alias setvw='source /usr/local/bin/virtualenvwrapper.sh'
 alias pysrv='python -m SimpleHTTPServer 9000'
 alias psrv='php -S localhost:8000'
@@ -150,19 +149,9 @@ alias rrrf="chmod -R 744"
 alias rwrf="chmod -R 764"
 # Display whatever file is regular file or folder
 
-# Get rid of those pesky .DS_Store files recursively
-alias dsclean='find . -type f -name .DS_Store -delete'
-
-# Track who is listening to your iTunes music
-alias whotunes='lsof -r 2 -n -P -F n -c iTunes -a -i TCP@`hostname`:3689'
-
 
 # From http://apple.stackexchange.com/questions/110343/copy-last-command-in-terminal
 alias copyLastCmd='fc -ln -1 | awk '\''{$1=$1}1'\'' ORS='\'''\'' | xclip -selection clipboard'
-
-# Pin to the tail of long commands for an audible alert after long processes
-## curl http://downloads.com/hugefile.zip; lmk
-alias lmk="say 'Process complete.'"
 
 ## list scripts portion of package json file
 alias jqs="jq .scripts package.json"

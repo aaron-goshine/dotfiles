@@ -143,5 +143,3 @@ alias co="git checkout"
 alias d="git diff"
 alias p="git push"
 alias s="git status"
-
-
