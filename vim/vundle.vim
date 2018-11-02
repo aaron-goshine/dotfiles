@@ -248,10 +248,6 @@ if $FAST_MACHINE == 1
   Plugin 'rking/ag.vim'
   let g:colorv_preview_ftype = 'css,javascript,scss,stylus,html,jsx'
   "==================================
-  Plugin 'aaron-goshine/dragvisualsvim'
-  " Remove any introduced trailing whitespace after moving...
-  let g:DVB_TrimWS = 1
-  "==================================
   Plugin 'mattn/emmet-vim'
   "==================================
   Plugin 'godlygeek/tabular'

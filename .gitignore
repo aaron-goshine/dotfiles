@@ -13,6 +13,8 @@ config/ranger/bookmarks
 config/ranger/history
 config/google-chrome/
 config/thefuck/
+config/dconf/
+config/nautilus/
 ipython/profile_default/db
 ipython/profile_default/history.sqlite
 vifm/vifminfo
