@@ -5,7 +5,7 @@
 if has('gui_macvim')
   " Custom Source Code font for Powerline
   " From: https://github.com/Lokaltog/powerline-fonts
- set guifont=Source\ Code\ Pro\ for\ Powerline:h13
+  set guifont=SauceCodePro\ Nerd\ Font:h13
   " Hide Toolbar in MacVim
   if has("gui_running")
     set guioptions=egmrt

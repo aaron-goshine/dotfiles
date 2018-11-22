@@ -220,5 +220,7 @@ alias unmute="osascript -e 'set volume output muted false'"
 ## curl http://downloads.com/hugefile.zip; lmk
 alias lmk="say 'Process complete.'"
 
-## list scripts portion of package json file
+### list scripts portion of package json file
 alias jqs="jq .scripts package.json"
+
+alias chess="gnuchess -g "

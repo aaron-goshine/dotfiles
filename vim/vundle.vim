@@ -157,7 +157,7 @@ let g:airline_section_z = '%3p%% %{substitute(line("."), "\\v(\\d)((\\d\\d\\d)+\
 "==================================
 Plugin 'hail2u/vim-css3-syntax'
 "==================================
-Plugin 'chrisbra/csv.vim'
+" Plugin 'chrisbra/csv.vim'
 "==================================
 Plugin 'aaron-goshine/vim-follow-my-lead'
 let g:fml_all_sources = 1
