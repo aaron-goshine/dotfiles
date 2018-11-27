@@ -199,8 +199,8 @@ iabbrev clg console.log
 iabbrev cld console.debug
 iabbrev clda console.debug(arguments
 " Insert a jsdoc block
-iabbrev rtn
-iabbrev fnc
+iabbrev rtn return
+iabbrev fnc function _ () {}
 
 inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
 

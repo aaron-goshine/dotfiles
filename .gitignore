@@ -1,20 +1,7 @@
 .DS_Store
 .maxcrc
 bin/php*
-config/.isolated-storage/
-config/configstore/
-config/direnv
-config/git/gitk
-config/mycli/history
-config/nvim
-config/pgcli/history
-config/pgcli/log
-config/ranger/bookmarks
-config/ranger/history
-config/google-chrome/
-config/thefuck/
-config/dconf/
-config/nautilus/
+config/
 ipython/profile_default/db
 ipython/profile_default/history.sqlite
 vifm/vifminfo
@@ -30,5 +17,4 @@ vim/init.vim
 vim/sessions/*
 vim/undo/*
 vim/vim
-vim/vundle_plugins/custom
 
