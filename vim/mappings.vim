@@ -187,7 +187,7 @@ nnoremap <silent> <m-w> :close<CR>
 " Toggle paste mode with F5
 nnoremap <silent> <F5> :set paste!<CR>
 " Copy and paste
-vmap <C-c> "+yi
+vmap <C-c> "+y
 vmap <C-x> "+c
 vmap <C-v> c<ESC>"+p
 imap <C-v> <ESC>"+pa
@@ -199,7 +199,8 @@ iabbrev clg console.log
 iabbrev cld console.debug
 iabbrev clda console.debug(arguments
 " Insert a jsdoc block
-iabbrev jxx /** \r* \r* */
+iabbrev rtn
+iabbrev fnc
 
 inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
 
