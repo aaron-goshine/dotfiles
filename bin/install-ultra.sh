@@ -80,8 +80,8 @@ success "done"
 t1=$(get_ultra_rule_str 'Installing vim plugins' 0 0)
 echo "$t1"
 
-#rm -rf ~/.vim/bundle/Vundle.vim
-#git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+rm -rf ~/.vim/bundle/Vundle.vim
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 if test $(which mvim)
 then
@@ -115,16 +115,16 @@ success "done"
 #==========================================================
 t1=$(get_ultra_rule_str 'Enjoy' 0 0 '∿')
 echo "$t1"
-OPTIONS="KEEP_BSH_PROFILE REPLACE"
+OPTIONS="KEEP _BSH_PROFILE REPLACE"
 select opt in $OPTIONS; do
   if [ "$REPLY" = "1" ]; then
-    t1=$(get_ultra_rule_str ' Keeping bash_profile but injecting source ' 0 0)
+    t1=$(get_ultra_rule_str ' Keeping bashrc but injecting source ' 0 0)
     echo "$t1"
-    cat $DOTDIR/bash/bash_profile >> ~/.bash_profile
+    cat $DOTDIR/bash/bashrc >> ~/.bashrc
   elif [ "$REPLY" = "2" ]; then
-    t1=$(get_ultra_rule_str ' replace bash_profile ' 0 0)
+    t1=$(get_ultra_rule_str ' replace bashrc' 0 0)
     echo "$t1"
-    slimlinker $DOTDIR/bash/bash_profile
+    slimlinker $DOTDIR/bash/bashrc
   fi
 exit
 done
