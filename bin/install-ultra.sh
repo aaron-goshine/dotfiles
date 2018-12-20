@@ -115,7 +115,7 @@ success "done"
 #==========================================================
 t1=$(get_ultra_rule_str 'Enjoy' 0 0 '∿')
 echo "$t1"
-OPTIONS="KEEP _BSH_PROFILE REPLACE"
+OPTIONS="KEEP_BSH_RC REPLACE"
 select opt in $OPTIONS; do
   if [ "$REPLY" = "1" ]; then
     t1=$(get_ultra_rule_str ' Keeping bashrc but injecting source ' 0 0)
