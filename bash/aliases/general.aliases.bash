@@ -155,4 +155,5 @@ alias copyLastCmd='fc -ln -1 | awk '\''{$1=$1}1'\'' ORS='\'''\'' | xclip -select
 
 ## list scripts portion of package json file
 alias jqs="jq .scripts package.json"
-
+alias ktmux="ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill"
+#
