@@ -1,7 +1,7 @@
 ## Welcome to the Ultra dot files and configurations
 
 ### What you get out of the box.
-- Bash and ipython configurations
+- Bash configurations
 - Tons of helper scripts and functions for bash
 - Tons of optional plugin for some of the most use tools: git,
    node, npm, homebrew, the list is too numerous to mention...

@@ -1,11 +1,6 @@
 #!/bin/bash
 source $HOME/.dotfiles/bash/libs/functions.bash
-# Get the latest versions from git, make sure you have git installed
 
-# TODO: implement feature to update php global packages
-# TODO: implement automation to up date PHP_CodeSniffer and
-# git clone https://github.com/squizlabs/PHP_CodeSniffer.git phpcs
-# git clone git://github.com/phpmd/phpmd.git
 #==========================================================
 t1=$(get_ultra_rule_str ' Ultra dotfiles installer ' 0 0)
 echo "$t1"
@@ -31,9 +26,7 @@ function slimlinker() {
 }
 
 slimlinker $DOTDIR/bin/
-slimlinker $DOTDIR/config/ 
 slimlinker $DOTDIR/tmux/
-slimlinker $DOTDIR/vifm/
 slimlinker $DOTDIR/vim/
 slimlinker $DOTDIR/ipython/
 slimlinker $DOTDIR/git/gitconfig
@@ -91,7 +84,6 @@ success "done"
 t1=$(get_ultra_rule_str 'Installing vim config symlinks' 0 0)
 echo "$t1"
 
-ln -fs $DOTDIR/vim ~/.config/nvim
 ln -fs $DOTDIR/vim/vimrc.vim ~/.vimrc
 ln -fs $DOTDIR/vim/vimrc.vim  ~/.config/nvim/init.vim
 
@@ -100,36 +92,33 @@ success "done"
 t1=$(get_ultra_rule_str 'Installing vim plugins' 0 0)
 echo "$t1"
 
-rm -rf ~/.vim/bundle/Vundle.vim
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+git clone https://github.com/k-takata/minpac.git ~/.vim/pack/minpac/opt/minpac
 
 if test $(which mvim)
 then
-  mvim -v +PluginInstall +qall
-  mvim -v +PluginUpdate +qall
+  mvim -v +PackUpdate  +qall
 else
   if test $(which vim)
   then
-    vim +PluginInstall +qall
-    vim +PluginUpdate +qall
+    vim +PackUpdate +qall
   else
     fail 'mvim or vim not found in path.'
   fi
 fi
 
 cd $DOTDIR/vim/
-rm -rf .tmp .backup .temp
-mkdir .tmp .backup .temp
-cd $DOTDIR/vim/bundle/YouCompleteMe/
+rm -rf .tmp .backup .temp .undo
+mkdir  .tmp .backup .temp .undo
+cd $DOTDIR/vim/pack/minpac/start/YouCompleteMe/
 git submodule update 
-npm install
+npm install --production 
 git submodule sync
 python install.py --all
-cd $DOTDIR/YouCompleteMe/third_party/ycmd/third_party/tern_runtime
+cd $DOTDIR/vim/pack/minpac/start/YouCompleteMe/third_party/ycmd/third_party/tern_runtime
 npm install --production
 
 cd $DOTDIR/vim/bundle/tern_for_vim/
-npm install
+npm install --production 
 
 success "done"
 #==========================================================

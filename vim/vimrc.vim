@@ -9,7 +9,7 @@
 " Small custom functions.
 source ~/.vim/functions.vim
 
-source ~/.vim/vundle.vim
+source ~/.vim/packages.vim
 
 " Automatically detect file types. (must turn on after Vundle)
 filetype plugin indent on
