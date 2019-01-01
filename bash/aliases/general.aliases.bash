@@ -1,31 +1,22 @@
 # List directory contents
-alias sl=ls
-alias ls='ls -G'        # Compact view, show colors
-alias la='ls -AF'       # Compact view, show hidden
-alias ll='ls -al'
-alias l='ls -a'
-alias l1='ls -1'
-alias ls="ls -1 ${colorflag}"
+
 alias _="sudo"
 alias c='clear'
-alias k='clear'
 alias cls='clear'
+alias k='clear'
+alias l1='ls -1'
+alias l='ls -a'
+alias la='ls -AF'
+alias ll='ls -al'
+alias ls="ls -1 ${colorflag}"
+alias ls='ls -G'
+alias sl=ls
 
 alias edit="$EDITOR"
 alias pager="$PAGER"
 
-alias q='exit'
-
-alias irc="$IRC_CLIENT"
-
 # Language aliases
-alias rb='ruby'
-alias py='python'
 alias ipy='ipython'
-
-# Pianobar can be found here: http://github.com/PromyLOPh/pianobar/
-
-alias piano='pianobar'
 
 alias ..='cd ..'         # Go up one directory
 alias ...='cd ../..'     # Go up two directories
@@ -42,26 +33,14 @@ alias rd='rmdir'
 
 # Shortcuts
 alias doc="cd ~/Documents"
-alias dwl="cd ~/Downloads"
-alias dkt="cd ~/Desktop"
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
 alias wk="cd ~/workspace"
 alias gw="cd ~/workspace/Go"
-alias ghb="cd ~/GITHUB"
+alias gb="cd ~/GITHUB"
 
 # Desktop Programs
 alias o="open"
-alias preview="open -a '$PREVIEW'"
-alias safari="open -a safari"
-alias firefox="open -a firefox"
-alias chrome="open -a google\ chrome"
-alias chromium="open -a chromium"
-alias dashcode="open -a dashcode"
-alias f='open -a Finder '
-alias fh='open -a Finder .'
-alias textedit='open -a TextEdit'
-
-# List all files colorized in long format
-
 alias week='date +%V'
 alias stopwatch='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 alias update='softwareupdate -i -a; brew update; brew upgrade --all; brew cleanup; npm install npm -g; npm update -g; gem update --system; gem update'
@@ -137,8 +116,11 @@ done
 command -v grunt > /dev/null && alias grunt="grunt --stack"
 
 # Stuff I never really use but cannot delete either because of http://xkcd.com/530/
+# Mute/Unmute the system volume. Plays nice with all other volume settings.
 alias stfu="osascript -e 'set volume output muted true'"
 alias pumpitup="osascript -e 'set volume 7'"
+alias mute="osascript -e 'set volume output muted true'"
+alias unmute="osascript -e 'set volume output muted false'"
 
 # Kill all the tabs in Chrome to free up memory
 # [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
@@ -154,15 +136,11 @@ alias vi='vim'
 alias dot='cd ~/.dotfiles/'
 alias todo='vim ~/.dotfiles/todo/'
 
-alias pxx='vim  ~/Library/Mobile\ Documents/com~apple~CloudDocs/roger'
+alias icloudedir='vim  ~/Library/Mobile\ Documents/com~apple~CloudDocs/'
 # alias setvw='source /usr/local/bin/virtualenvwrapper.sh'
 alias pysrv='python -m SimpleHTTPServer 9000'
-alias psrv='php -S localhost:8000'
-
-alias e='emacs'
-alias v='vim'
-
 alias srvr='python -m SimpleHTTPServer 9000'
+alias psrv='php -S localhost:8000'
 
 # Unix octal permision table, just a reminder.
 # if you intend to mix your own, just be careful
@@ -211,14 +189,6 @@ alias copyLastCmd='fc -ln -1 | awk '\''{$1=$1}1'\'' ORS='\'''\'' | pbcopy'
 
 # Use Finder's Quick Look on a file (^C or space to close)
 alias ql='qlmanage -p 2>/dev/null'
-
-# Mute/Unmute the system volume. Plays nice with all other volume settings.
-alias mute="osascript -e 'set volume output muted true'"
-alias unmute="osascript -e 'set volume output muted false'"
-
-# Pin to the tail of long commands for an audible alert after long processes
-## curl http://downloads.com/hugefile.zip; lmk
-alias lmk="say 'Process complete.'"
 
 ### list scripts portion of package json file
 alias jqs="jq .scripts package.json"
