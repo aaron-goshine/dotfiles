@@ -16,9 +16,10 @@ https://github.com/tony/tmux-config.
 
 import os
 import sys
+import psutil
+
 if os.name != 'posix':
         sys.exit('platform not supported')
-import psutil
 
 
 def get_dashes(perc):
@@ -35,9 +36,9 @@ def info():
         memused = mem.used
 
     cpu_dashes, cpu_empty_dashes = get_dashes(psutil.cpu_percent(interval=0.1))
-    line = "%s/%sMB [%s%s] %5s%%" % (
-        str(int(memused / 1024 / 1024)),
-        str(int(mem.total / 1024 / 1024)),
+    line = "%s/%s GB [%s%s] %5s%%" % (
+        str(int(memused / 1024 / 1024 / 1024)),
+        str(int(mem.total / 1024 / 1024 / 1024)),
         cpu_dashes, cpu_empty_dashes,
         psutil.cpu_percent(interval=0.1),
     )
@@ -50,6 +51,7 @@ def main():
         print info()
     except (KeyboardInterrupt, SystemExit):
         pass
+
 
 if __name__ == '__main__':
     main()

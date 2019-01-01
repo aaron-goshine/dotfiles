@@ -26,7 +26,6 @@ function slimlinker() {
 }
 
 slimlinker $DOTDIR/bin/
-slimlinker $DOTDIR/tmux/
 slimlinker $DOTDIR/vim/
 slimlinker $DOTDIR/ipython/
 slimlinker $DOTDIR/git/gitconfig
@@ -36,12 +35,12 @@ do
   slimlinker $DOTDIR/xrc/$FILE
 done;
 
-rm -rf ~/.task ~/.timewarrior ~/.gnupg ~/.password-store ~/bin 2> /dev/null
-ln -s $DOTDIR/bin/ ~/bin
-ln -s ~/Library/Mobile\ Documents/com~apple~CloudDocs/task/ ~/.task
-ln -s ~/Library/Mobile\ Documents/com~apple~CloudDocs/timewarrior/ ~/.timewarrior
-ln -s ~/Library/Mobile\ Documents/com~apple~CloudDocs/roger/.gnupg ~/.gnupg
-ln -s ~/Library/Mobile\ Documents/com~apple~CloudDocs/roger/.password-store ~/.password-store
+# rm -rf ~/.task ~/.timewarrior ~/.gnupg ~/.password-store ~/bin 2> /dev/null
+# ln -s $DOTDIR/bin/ ~/bin
+# ln -s ~/Library/Mobile\ Documents/com~apple~CloudDocs/task/ ~/.task
+# ln -s ~/Library/Mobile\ Documents/com~apple~CloudDocs/timewarrior/ ~/.timewarrior
+# ln -s ~/Library/Mobile\ Documents/com~apple~CloudDocs/roger/.gnupg ~/.gnupg
+# ln -s ~/Library/Mobile\ Documents/com~apple~CloudDocs/roger/.password-store ~/.password-store
 
 success "done"
 

@@ -1,11 +1,11 @@
 TITLE=$(get_ultra_rule_str ' RTFMP ' 0 0)
-ULTRANAME=$(get_ultra_rule_str " ✿ ULTRA $(whoami | sed 's/\.[a-z]*$//' | awk '{print toupper($0)}') ✿ " 0 0)
+ULTRANAME=$(get_ultra_rule_str " ✿ EXTRAORDINARY $(whoami | sed 's/\.[a-z]*$//' | awk '{print toupper($0)}') ✿ " 0 0)
 RULE=$(get_ultra_rule_str '' 0 0) 
 FMNO=$(get_ultra_rule_str ' ✿ ' 0 0) 
 
 function ultra_prompt () {
   TITLE=$(get_ultra_rule_str ' ALWAYS RTFMP ')
-  ULTRANAME=$(get_ultra_rule_str " ULTRA $(whoami | sed 's/\.[a-z]*$//' | awk '{print toupper($0)}') ")
+  ULTRANAME=$(get_ultra_rule_str " EXTRAORDINARY $(whoami | sed 's/\.[a-z]*$//' | awk '{print toupper($0)}') ")
   RULE=$(get_ultra_rule_str '') 
   FMNO=$(get_ultra_rule_str ' ✿ ') 
 
@@ -21,7 +21,7 @@ function ultra_prompt () {
 echo "$ULTRANAME"
 echo "$TITLE"
 echo "$RULE"
-t1=$(get_ultra_rule_str ' Ultra dotfiles installer ' 0 0)
+t1=$(get_ultra_rule_str ' EXTRAORDINARY dotfiles installer ' 0 0)
 
 if [ $FAST_MACHINE ]
 then
