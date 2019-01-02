@@ -72,6 +72,7 @@ npm install -g stylelint-config-styled-components
 npm install -g stylelint-processor-styled-components
 npm install -g tern
 
+
 success "done"
 
 #==========================================================

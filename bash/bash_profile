@@ -93,3 +93,8 @@ export HH_CONFIG=hicolor         # get more colors
 if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hh -- \C-j"'; fi
 
 eval "$(direnv hook bash)"
+
+# open tmux by default
+tmux new-session -t default || tmux new-session -s default
+
+

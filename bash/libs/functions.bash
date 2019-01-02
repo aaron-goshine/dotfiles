@@ -1,3 +1,6 @@
+
+# Create a new directory and enter it
+
 # simple history
 function rh {
   history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
@@ -22,7 +25,7 @@ function cdf() {  # short for cdfinder
 
 # cd into and show content of dir.
 function cdl() {  # show content of current directory
-  cd "$@" && ls -a1
+  cd "$@" && ls -a
 }
 
 # Start an HTTP server from a directory, optionally specifying the port

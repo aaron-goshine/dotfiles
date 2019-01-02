@@ -1,9 +1,7 @@
 # List directory contents
 
 alias _="sudo"
-alias c='clear'
 alias cls='clear'
-alias k='clear'
 alias l1='ls -1'
 alias l='ls -a'
 alias la='ls -AF'
