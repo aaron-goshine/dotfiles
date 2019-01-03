@@ -50,11 +50,16 @@ endif
 syntax enable
 set backup             " Turn on backups
 set autoread           " Automatically reload changes if detected
-set wildmenu           " Turn on Wild menu
-set hidden             " Change buffer - without saving
+set wildmenu           " Turn on Wild menu set hidden             " Change buffer - without saving
 set history=1024       " Number of things to remember in history.
 set cf                 " Enable error files & error jumping.
-set clipboard+=unnamed " Yanks go on clipboard instead.
+" yank to clipboard
+if has("clipboard")
+  set clipboard=unnamed " copy to the system clipboard
+  if has("unnamedplus") " X11 support
+    set clipboard+=unnamedplus
+  endif
+endif
 set autowrite          " Writes on make/shell commands
 set formatoptions=crql
 set nostartofline      " Don't go to the start of the line after some commands
