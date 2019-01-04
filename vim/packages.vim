@@ -112,6 +112,15 @@ let g:colorv_preview_ftype = 'css,javascript,scss,stylus,html,jsx'
 call minpac#add('mileszs/ack.vim')
 let g:ackprg = 'ag --vimgrep'
 "=========================================
+call minpac#add('airblade/vim-gitgutter')
+set signcolumn=yes
+let g:gitgutter_override_sign_column_highlight = 0
+let g:gitgutter_sign_added = '++'
+let g:gitgutter_sign_modified = '!!'
+let g:gitgutter_sign_removed = '--'
+let g:gitgutter_sign_removed_first_line = '^^'
+let g:gitgutter_sign_modified_removed = '!-'
+"=========================================
 call minpac#add('ternjs/tern_for_vim')
 call minpac#add('ryanoasis/vim-devicons')
 call minpac#add('ervandew/supertab')
@@ -121,5 +130,4 @@ call minpac#add('elzr/vim-json')
 call minpac#add('mxw/vim-jsx')
 call minpac#add('tpope/vim-fugitive')
 call minpac#add('aaron-goshine/swapvim')
-call minpac#add('airblade/vim-gitgutter')
 
