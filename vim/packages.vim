@@ -121,4 +121,5 @@ call minpac#add('elzr/vim-json')
 call minpac#add('mxw/vim-jsx')
 call minpac#add('tpope/vim-fugitive')
 call minpac#add('aaron-goshine/swapvim')
+call minpac#add('airblade/vim-gitgutter')
 
