@@ -121,6 +121,13 @@ let g:gitgutter_sign_removed = '--'
 let g:gitgutter_sign_removed_first_line = '^^'
 let g:gitgutter_sign_modified_removed = '!-'
 "=========================================
+call minpac#add('nathanaelkane/vim-indent-guides')
+let g:indent_guides_enable_on_vim_startup = 1
+hi IndentGuidesOdd  guibg=red   ctermbg=3
+hi IndentGuidesEven guibg=green ctermbg=4
+hi IndentGuidesOdd  ctermbg=black
+hi IndentGuidesEven ctermbg=darkgrey
+"=========================================
 call minpac#add('ternjs/tern_for_vim')
 call minpac#add('ryanoasis/vim-devicons')
 call minpac#add('ervandew/supertab')
