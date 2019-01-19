@@ -1,0 +1,43 @@
+#! /usr/local/bin/python3
+
+from subprocess import call
+import random
+
+
+list = ['strong', 'money', 'love']
+
+
+word_list = open('/usr/share/dict/words')
+
+for word in word_list:
+    list.append(str.strip(word))
+
+random.shuffle(list)
+
+list = list[0:10]
+
+index = 0
+score = 0
+
+while True:
+    if (index >= len(list)):
+        print('Final Score: ', score)
+        break
+
+    cur_word = list[index]
+
+    call(['say', cur_word])
+
+    text = str.strip(str(input('Please type what you heard: ')))
+
+    if(str.lower(text) == str.lower(cur_word)):
+        print('\033[1;32;5m Well done! \034[0m')
+        score += 1
+    else:
+        print('=========================================')
+        print('Expected word:', cur_word)
+        print('Entered word: ', text)
+        print('\033[1;31;40m Try again!\033[0m')
+        print('=========================================')
+
+    index += 1
