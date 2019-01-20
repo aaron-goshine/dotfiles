@@ -3,16 +3,18 @@
 from subprocess import call
 import random
 
+list = []
 
-list = ['strong', 'money', 'love']
 
-
-word_list = open('/usr/share/dict/words')
+# word_list = open('/usr/share/dict/words')
+word_list = open('/Users/aaron.goshine/.dotfiles/terminal/wordlist')
 
 for word in word_list:
-    list.append(str.strip(word))
+    if len(word) < 12 and len(word) > 3:
+        list.append(str.strip(word))
 
 random.shuffle(list)
+
 
 list = list[0:10]
 
@@ -21,7 +23,7 @@ score = 0
 
 while True:
     if (index >= len(list)):
-        print('Final Score: ', score)
+        print('\033[5m Final Score: ', score)
         break
 
     cur_word = list[index]
@@ -31,7 +33,7 @@ while True:
     text = str.strip(str(input('Please type what you heard: ')))
 
     if(str.lower(text) == str.lower(cur_word)):
-        print('\033[1;32;5m Well done! \034[0m')
+        print('\033[1;32 Well done! \033[0m')
         score += 1
     else:
         print('=========================================')
