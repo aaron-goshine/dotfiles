@@ -132,7 +132,7 @@ alias reload="clear && exec $SHELL -l"
 
 alias vi='vim'
 alias dot='cd ~/.dotfiles/'
-alias todo='vim ~/.dotfiles/todo/'
+alias todo='cd ~/DAILY/'
 
 alias icloudedir='vim  ~/Library/Mobile\ Documents/com~apple~CloudDocs/'
 # alias setvw='source /usr/local/bin/virtualenvwrapper.sh'
