@@ -220,6 +220,7 @@ function docx() {
   rule
   echo "done!"
 }
+
 function shell_colors() {
   for fgbg in 38 48 ; do # Foreground / Background
     for color in {0..255} ; do # Colors
@@ -245,4 +246,11 @@ function shell_colors() {
       echo #Newline
     done
   done
+}
+# remove all docker stuff
+function canvas_project() {
+  echo "Creating a canvas project"
+  git clone git@github.com:aaron-goshine/canvas-starter.git ~/workspace/$1
+  cd ~/workspace/$1
+  echo "done!"
 }

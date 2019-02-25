@@ -6,8 +6,8 @@ alias l1='ls -1'
 alias l='ls -a'
 alias la='ls -AF'
 alias ll='ls -al'
-alias ls="ls -1 ${colorflag}"
-alias ls='ls -G'
+alias ll='ls -al'
+alias ls='ls -Gal'
 alias sl=ls
 
 alias edit="$EDITOR"
