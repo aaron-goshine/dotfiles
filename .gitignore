@@ -11,3 +11,4 @@ vim/pack/*
 vim/init.vim
 vim/sessions/*
 vim/undo/*
+*server.pem

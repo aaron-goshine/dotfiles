@@ -29,8 +29,8 @@ End-Of-Usage
 
     [ $# -eq 0 ] && extract -h && return 1
     while [ $# -gt 0 ]; do
-	    if [ -f "$1" ]; then
-		    case "$1" in
+     if [ -f "$1" ]; then
+       case "$1" in
                 *.tar.bz2|*.tbz|*.tbz2) tar "x${verbose}jf" "$1" ;;
                 *.tar.gz|*.tgz) tar "x${verbose}zf" "$1" ;;
                 *.tar.xz) xz --decompress "$1"; set -- "$@" "${1:0:-3}" ;;
@@ -50,10 +50,10 @@ End-Of-Usage
                 *.Z) uncompress "$1" ;;
                 *.7z) 7za x "$1" ;;
                 *) echo "'$1' cannot be extracted via extract" >&2;;
-		    esac
+      esac
         else
-		    echo "extract: '$1' is not a valid file" >&2
-	    fi
+      echo "extract: '$1' is not a valid file" >&2
+     fi
         shift
     done
 }
