@@ -194,8 +194,17 @@ iabbrev ddate <C-R>=strftime("%Y-%m-%d")<CR>
 iabbrev clg console.log
 iabbrev cld console.debug
 iabbrev clda console.debug(arguments
+
+iabbrev clx /** Todo: remove before commit */
+\<CR> console.log('=====>');
+\<CR> console.log(value);
+\<CR> console.log('=====x');
+
 " Insert a jsdoc block
-iabbrev jxx /** \r* \r* */
+iabbrev jxx /**
+\<CR> *
+\<CR> *
+\<CR> **/
 
 " copy current file name (relative/absolute) to system clipboard
 

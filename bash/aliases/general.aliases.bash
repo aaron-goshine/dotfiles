@@ -41,6 +41,8 @@ alias gb="cd ~/GITHUB"
 alias o="open"
 alias week='date +%V'
 alias stopwatch='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
+alias chrome-debugger='open chrome://inspect/#devices'
+
 alias update='softwareupdate -i -a; brew update; brew upgrade --all; brew cleanup; npm install npm -g; npm update -g; gem update --system; gem update'
 
 alias pipudate='sudo pip freeze --local | sudo grep -v '^\-e' | cut -d = -f 1  | sudo xargs -n1 pip install -U'

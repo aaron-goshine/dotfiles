@@ -60,9 +60,8 @@ autocmd FileType yaml set nospell
 autocmd FileType json set nospell
 
 
-autocmd! FileType * call SetDictionary()
+" autocmd! FileType * call SetDictionary()
 autocmd! BufNewFile * call LoadTemplate()
-"set current working directory automatically
 autocmd BufEnter * silent! lcd %:p:h
 
 " Always add the current file's directory to the path and tags list if not

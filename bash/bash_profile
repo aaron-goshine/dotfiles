@@ -98,3 +98,6 @@ eval "$(direnv hook bash)"
 if [ -z "$TMUX" ]; then
   tmux a 2> /dev/null || tmux 
 fi
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
