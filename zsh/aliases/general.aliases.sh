@@ -17,6 +17,8 @@ alias dt="cd ~/Desktop"
 alias wk="cd ~/workspace"
 alias gw="cd ~/workspace/Go"
 alias gb="cd ~/GITHUB"
+alias s="git status"
+alias cm="git commit"
 
 # Desktop Programs
 alias o="open"
