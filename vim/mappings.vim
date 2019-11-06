@@ -64,6 +64,8 @@ nnoremap <silent> g= :wincmd =<CR>
 " Swap Windows
 nnoremap <silent> gx :wincmd x<CR>
 
+nnoremap <silent> <return> :w<CR>
+
 " ---------------
 " Modifer Mappings
 " ---------------
@@ -86,29 +88,16 @@ nnoremap 1 <c-w>w
 inoremap jk <Esc>
 inoremap JK <Esc>
 
+nnoremap <silent> § :e ~/.dotfiles/vim/vimrc.vim<CR>
+
 " ---------------
 " Leader Mappings
 " ---------------
 
-"nnoremap <silent> <leader><space>:noh<cr>:call clearmatches()<cr>
-"nnoremap <silent> <leader>N <esc>:sbprevious<CR>
-"nnoremap <silent> <leader>M <esc>:sbnext<CR>
-"nnoremap <silent> <leader>n <esc>:bprevious<CR>
-"nnoremap <silent> <leader>m <esc>:bnext<CR>
-"nnoremap <silent> <leader>d <esc>:bdelete<CR>
-"nnoremap <silent> <leader>b <esc>:ls<CR>
-"vnoremap <silent> <leader>s :sort<CR>
-"nnoremap <silent> <leader>w :w<CR>
-"nnoremap <silent> <leader>l :set list!<CR>
-"nnoremap <silent> <leader>e :Explore<CR>
-"nnoremap <silent> <leader>f :CtrlP<CR>
-
-nnoremap <Leader>pi :call PluginReloadAndRun("PluginInstall")<CR>
-nnoremap <Leader>pu :call PluginReloadAndRun("PluginInstall!")<CR>
-nnoremap <Leader>pc :call PluginReloadAndRun("PluginClean")<CR>
 nnoremap <silent> <leader>m :CtrlPMRUFiles<CR>
 nnoremap <silent> <leader>b :CtrlPBuffer<CR>
 nnoremap <silent> <leader>f :CtrlP<CR>
+
 
 nnoremap <leader>af :Ag<space>
 " Leader Commands
@@ -225,12 +214,10 @@ endif
 
 inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
 
-
 vnoremap <silent> < <gv
 vnoremap <silent> > >gv
 nnoremap <silent> n nzzzv
 nnoremap <silent> N Nzzzv
-
 
 nmap <silent> --s "=HaskellModuleSection()<CR>gp
 nmap <silent> --h "=HaskellModuleHeader()<CR>:0put =<CR>

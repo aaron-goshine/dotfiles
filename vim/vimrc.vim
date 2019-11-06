@@ -1,6 +1,7 @@
 " =============================================================================
 " Author: Aaron Goshine
 " Description: The Vim Configuration of Superheros
+nnoremap <silent> <leader>m :CtrlPMRUFiles<CR>
 " Version: 0.0.1
 " Inheritance: This vimrc is base on (dot_vim) with serious weight loss
 " =============================================================================

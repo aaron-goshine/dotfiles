@@ -19,6 +19,7 @@ alias gw="cd ~/workspace/Go"
 alias gb="cd ~/GITHUB"
 alias s="git status"
 alias cm="git commit"
+alias p="git push"
 
 # Desktop Programs
 alias o="open"
