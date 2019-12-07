@@ -20,6 +20,7 @@ alias gb="cd ~/GITHUB"
 alias s="git status"
 alias cm="git commit"
 alias p="git push"
+alias ic="cd ~/Library/Mobile\ Documents"
 
 # Desktop Programs
 alias o="open"

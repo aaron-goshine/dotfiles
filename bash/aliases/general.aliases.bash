@@ -36,12 +36,13 @@ alias dt="cd ~/Desktop"
 alias wk="cd ~/workspace"
 alias gw="cd ~/workspace/Go"
 alias gb="cd ~/GITHUB"
+alias ic="cd ~/Library/Mobile\ Documents"
 
 # Desktop Programs
 alias o="open"
 alias week='date +%V'
 alias stopwatch='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
-alias chrome-debugger='open chrome://inspect/#devices'
+alias chrome-debugger='chrome://inspect/#devices'
 
 alias update='softwareupdate -i -a; brew update; brew upgrade --all; brew cleanup; npm install npm -g; npm update -g; gem update --system; gem update'
 
