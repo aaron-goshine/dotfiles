@@ -100,8 +100,7 @@ inoremap JK <Esc>
 "vnoremap <silent> <leader>s :sort<CR>
 "nnoremap <silent> <leader>w :w<CR>
 "nnoremap <silent> <leader>l :set list!<CR>
-"nnoremap <silent> <leader>e :Explore<CR>
-"nnoremap <silent> <leader>f :CtrlP<CR>
+nnoremap <silent> <leader>e :Explore<CR>
 
 nnoremap <Leader>pi :call PluginReloadAndRun("PluginInstall")<CR>
 nnoremap <Leader>pu :call PluginReloadAndRun("PluginInstall!")<CR>
@@ -231,6 +230,9 @@ vnoremap <silent> > >gv
 nnoremap <silent> n nzzzv
 nnoremap <silent> N Nzzzv
 
+nnoremap <silent> N Nzzzv
+
+nnoremap <silent> <CR> :w <CR>
 
 nmap <silent> --s "=HaskellModuleSection()<CR>gp
 nmap <silent> --h "=HaskellModuleHeader()<CR>:0put =<CR>
