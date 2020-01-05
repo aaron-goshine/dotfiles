@@ -1,7 +1,7 @@
 export GOPATH=$HOME/workspace/Go
 export GOROOT=/usr/local/opt/go/libexec
 
-export PATH="$PATH:~/.local/bin:~/bin:~/.cask/bin:/usr/local/MacGPG2/bin:/usr/local/lib/node_modules/karma/bin:/usr/local/share/npm/bin:/opt/local/bin:/usr/local/go/bin:/usr/local/opt/php70/bin:~/workspace/Go/bin:/usr/local/opt/go/libexec/bin:/usr/local/sbin:./"
+export PATH="$PATH:~/.local/bin:~/bin:~/.cask/bin:/usr/local/MacGPG2/bin:/usr/local/lib/node_modules/karma/bin:/usr/local/share/npm/bin:/opt/local/bin:/usr/local/go/bin:/usr/local/opt/php70/bin:~/workspace/Go/bin:/usr/local/opt/go/libexec/bin:/usr/local/sbin:./:~/miniconda3/bin"
 
 export GREP_OPTIONS="--color=auto"
 export CLICOLOR=1
