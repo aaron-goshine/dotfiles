@@ -12,3 +12,4 @@ vim/init.vim
 vim/sessions/*
 vim/undo/*
 *server.pem
+zsh/oh-my-zsh/cache/.zsh-update

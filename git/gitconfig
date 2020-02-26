@@ -81,3 +81,5 @@
 
 [push]
   default = current
+[pager]
+	branch = false
