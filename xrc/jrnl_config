@@ -9,11 +9,11 @@
     "highlight": true, 
     "journals": {
       "default": {
-        "journal": "~/Library/Mobile Documents/com~apple~CloudDocs/jrnl/default"
+        "journal": "~/Google Drive/journals/default"
       },
       "home": {
-        "journal": "~/Library/Mobile Documents/com~apple~CloudDocs/jrnl/default",
-        "encrypt": true
+        "journal": "~/Google Drive/journals/default",
+        "encrypt": false
       }
     }
 }

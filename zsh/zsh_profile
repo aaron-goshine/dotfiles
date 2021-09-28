@@ -101,10 +101,10 @@ export HH_CONFIG=hicolor         # get more colors
 # if this is interactive shell, then bind hh to Ctrl-r (for Vi mode check doc)
 
 eval "$(direnv hook zsh)"
-# open tmux by default
-# if [ -z "$TMUX" ]; then
-#   tmux a 2> /dev/null || tmux 
-# fi
+open tmux by default
+if [ -z "$TMUX" ]; then
+  tmux a 2> /dev/null || tmux 
+fi
 
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
@@ -459,5 +459,4 @@ function _gh_repo_view {
     '--help[Show help for command]' \
     '(-R --repo)'{-R,--repo}'[Select another repository using the `OWNER/REPO` format]:'
 }
-
 
