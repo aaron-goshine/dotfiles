@@ -119,13 +119,6 @@ fi
 cd $DOTDIR/vim/
 rm -rf .tmp .backup .temp .undo
 mkdir  .tmp .backup .temp .undo
-cd $DOTDIR/vim/pack/minpac/start/YouCompleteMe/
-git submodule update 
-npm install --production 
-git submodule sync
-python install.py --all
-cd $DOTDIR/vim/pack/minpac/start/YouCompleteMe/third_party/ycmd/third_party/tern_runtime
-npm install --production
 
 cd $DOTDIR/vim/bundle/tern_for_vim/
 npm install --production 

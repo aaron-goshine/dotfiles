@@ -184,20 +184,7 @@ nnoremap <silent> <F5> :set paste!<CR>
 iabbrev ddate <C-R>=strftime("%Y-%m-%d")<CR>
 
 " Insert a console statements
-iabbrev clg console.log
-iabbrev cld console.debug
-iabbrev clda console.debug(arguments
-
-iabbrev clx /** Todo: remove before commit */
-\<CR> console.log('=====>');
-\<CR> console.log(value);
-\<CR> console.log('=====x');
-
-" Insert a jsdoc block
-iabbrev jxx /**
-\<CR> *
-\<CR> *
-\<CR> **/
+iabbrev clg console.log();<Left><Left>
 
 " copy current file name (relative/absolute) to system clipboard
 
