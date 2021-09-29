@@ -7,6 +7,13 @@
 let mapleader=","
 let maplocalleader = "\\"
 
+" ----------------------------------------
+" Abbreviation
+" ----------------------------------------
+iabbrev ddate <C-R>=strftime("%Y-%m-%d")<CR>
+iabbrev clg console.log();<Left><Left>
+
+
 " ---------------
 " Regular Mappings
 " ---------------
@@ -18,26 +25,19 @@ nnoremap  <silent> vy ggVG
 " Make Y behave like other capital commands.
 " Hat-tip http://vimbits.com/bits/11
 nnoremap  <silent> Y y$
-
 " Just to beginning and end of lines easier.
 noremap  <silent> H ^
 noremap  <silent> L $
-
 " Create newlines without entering insert mode
 nnoremap  <silent> go o<Esc>k
 nnoremap  <silent> gO O<Esc>j
-
-" remap U to <C-r> for easier redo
-" from http://vimbits.com/bits/356
-nnoremap  <silent> U <C-r>
-
-
 " Don't move on *
 nnoremap <silent> * :let stay_star_view = winsaveview()<cr>*:call winrestview(stay_star_view)<cr>
 
 " ---------------
 " Window Movement
 " ---------------
+nnoremap <silent> 1 <c-w>w
 nnoremap <silent> gh :WriteBufferIfNecessary<CR>:wincmd h<CR>
 nnoremap <silent> <M-h> :wincmd h<CR>
 nnoremap <silent> gj :WriteBufferIfNecessary<CR>:wincmd j<CR>
@@ -45,25 +45,13 @@ nnoremap <silent> gk :WriteBufferIfNecessary<CR>:wincmd k<CR>
 nnoremap <silent> <M-k> :wincmd k<CR>
 nnoremap <silent> gl :WriteBufferIfNecessary<CR>:wincmd l<CR>
 nnoremap <silent> <M-l> :wincmd l<CR>
+nnoremap 1 <c-w>w
 
-"   4 Window Splits
-"
-"   -----------------
-"   g1 | g2 | g3 | g4
-"   -----------------
-nnoremap <silent> 1 <c-w>w
-nnoremap <silent> g1 :WriteBufferIfNecessary<CR>:wincmd t<CR>
-nnoremap <silent> g2 :WriteBufferIfNecessary<CR>:wincmd t<bar>:wincmd l<CR>
-nnoremap <silent> g3 :WriteBufferIfNecessary<CR>:wincmd t<bar>:wincmd l<bar>:wincmd l<CR>
-nnoremap <silent> g4 :WriteBufferIfNecessary<CR>:wincmd b<CR>
-
-" Previous Window
-nnoremap <silent> gp :wincmd p<CR>
 " Equal Size Windows
 nnoremap <silent> g= :wincmd =<CR>
 " Swap Windows
 nnoremap <silent> gx :wincmd x<CR>
-
+"save on enter
 nnoremap <silent> <return> :w<CR>
 
 " ---------------
@@ -78,7 +66,6 @@ nnoremap <C-j> 15gjzz
 nnoremap <C-k> 15gkzz
 vnoremap <C-j> 15gjzz
 vnoremap <C-k> 15gkzz
-nnoremap 1 <c-w>w
 
 " ---------------
 " Insert Mode Mappings
@@ -93,17 +80,11 @@ nnoremap <silent> § :e ~/.dotfiles/vim/vimrc.vim<CR>
 " ---------------
 " Leader Mappings
 " ---------------
-
 nnoremap <silent> <leader>e :Explore<CR>
-nnoremap <Leader>pi :call PluginReloadAndRun("PluginInstall")<CR>
-nnoremap <Leader>pu :call PluginReloadAndRun("PluginInstall!")<CR>
-nnoremap <Leader>pc :call PluginReloadAndRun("PluginClean")<CR>
 nnoremap <silent> <leader>m :CtrlPMRUFiles<CR>
 nnoremap <silent> <leader>b :CtrlPBuffer<CR>
 nnoremap <silent> <leader>f :CtrlP<CR>
 
-
-nnoremap <leader>af :Ag<space>
 " Leader Commands
 nnoremap <Leader>t= :Tabularize assignment<CR>
 vnoremap <Leader>t= :Tabularize assignment<CR>
@@ -117,19 +98,6 @@ vnoremap <silent><leader>cc :TComment<CR>
 nnoremap <silent><leader>cb :TCommentBlock<CR>
 vnoremap <silent><leader>cb :TCommentBlock<CR>
 
-nnoremap <Leader>gc :Gcommit -v<CR>
-nnoremap <Leader>gca :Gcommit -a -v<CR>
-nnoremap <Leader>gw :Gwrite<CR>
-nnoremap <Leader>gs :Gstatus<CR>
-nnoremap <Leader>gp :Git push<CR>
-" Mnemonic, gu = Git Update
-nnoremap <Leader>gu :Git pull<CR>
-nnoremap <Leader>gd :Gvdiff<CR>
-" Exit a diff by closing the diff window
-nnoremap <Leader>gx :wincmd h<CR>:q<CR>
-" Start git command
-nnoremap <leader>gi :Git<space>
-
 nmap <leader>gj <plug>(signify-next-hunk)
 nmap <leader>gk <plug>(signify-prev-hunk)
 
@@ -137,8 +105,6 @@ vmap <expr>  ++  VMATH_YankAndAnalyse()
 nmap         ++  vip++
 " Format a json file with Python's built in json.tool.
 nnoremap <leader>fj :%!python -m json.tool<CR>
-
-" Format a json file with Python's built in json.tool.
 vnoremap <leader>fj :'<,'>!python -m json.tool<CR>
 
 " Highlight search word under cursor without jumping to next
@@ -146,9 +112,6 @@ nnoremap <leader>h *<C-O>
 
 " Toggle spelling mode with ,s
 nnoremap <silent> <leader>s :set spell!<CR>
-
-" Quickly switch to last buffer
-nnoremap <leader>, :e#<CR>
 
 " Underline the current line with '-'
 nnoremap <silent> <leader>ul :t.\|s/./-/\|:nohls<cr>
@@ -173,19 +136,6 @@ nnoremap <leader>fef mx=ggG='x
 " Split window vertically or horizontally *and* switch to the new split!
 nnoremap <silent> <leader>hs :split<Bar>:wincmd j<CR>:wincmd =<CR>
 nnoremap <silent> <leader>vs :vsplit<Bar>:wincmd l<CR>:wincmd =<CR>
-
-" Close the current window
-nnoremap <silent> <m-w> :close<CR>
-
-" Toggle paste mode with F5
-nnoremap <silent> <F5> :set paste!<CR>
-
-" Insert date
-iabbrev ddate <C-R>=strftime("%Y-%m-%d")<CR>
-
-" Insert a console statements
-iabbrev clg console.log();<Left><Left>
-
 " copy current file name (relative/absolute) to system clipboard
 
 if has("mac") || has("gui_macvim") || has("gui_mac")
@@ -217,4 +167,20 @@ nmap <silent> --h "=HaskellModuleHeader()<CR>:0put =<CR>
 " search current file for visually selected  word
 vnoremap // y/<C-R>"<CR>
 
-nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<cr>
+" Vim test these "Ctrl mappings" work well when Caps Lock is mapped to Ctrl
+nmap <silent> t<C-n> :TestNearest<CR>
+nmap <silent> t<C-f> :TestFile<CR>
+nmap <silent> t<C-s> :TestSuite<CR>
+nmap <silent> t<C-l> :TestLast<CR>
+nmap <silent> t<C-g> :TestVisit<CR>
+
+" Vimspector
+nnoremap <Leader>dd :call vimspector#Launch()<CR>
+nnoremap <Leader>de :call vimspector#Reset()<CR>
+nnoremap <Leader>dc :call vimspector#Continue()<CR>
+nnoremap <Leader>dt :call vimspector#ToggleBreakpoint()<CR>
+nnoremap <Leader>dT :call vimspector#ClearBreakpoints()<CR>
+nmap <Leader>dk <Plug>VimspectorRestart
+nmap <Leader>dh <Plug>VimspectorStepOut
+nmap <Leader>dl <Plug>VimspectorStepInto
+nmap <Leader>dj <Plug>VimspectorStepOver

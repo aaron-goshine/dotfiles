@@ -101,7 +101,7 @@ export HH_CONFIG=hicolor         # get more colors
 # if this is interactive shell, then bind hh to Ctrl-r (for Vi mode check doc)
 
 eval "$(direnv hook zsh)"
-open tmux by default
+# open tmux by default
 if [ -z "$TMUX" ]; then
   tmux a 2> /dev/null || tmux 
 fi
