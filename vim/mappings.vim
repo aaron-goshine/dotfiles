@@ -81,6 +81,8 @@ nnoremap <silent> § :e ~/.dotfiles/vim/vimrc.vim<CR>
 " Leader Mappings
 " ---------------
 nnoremap <silent> <leader>e :Explore<CR>
+nnoremap <silent> <leader>r :TernRename<CR>
+
 nnoremap <silent> <leader>m :CtrlPMRUFiles<CR>
 nnoremap <silent> <leader>b :CtrlPBuffer<CR>
 nnoremap <silent> <leader>f :CtrlP<CR>
@@ -136,6 +138,29 @@ nnoremap <leader>fef mx=ggG='x
 " Split window vertically or horizontally *and* switch to the new split!
 nnoremap <silent> <leader>hs :split<Bar>:wincmd j<CR>:wincmd =<CR>
 nnoremap <silent> <leader>vs :vsplit<Bar>:wincmd l<CR>:wincmd =<CR>
+
+" Close the current window
+nnoremap <silent> <m-w> :close<CR>
+
+" Insert date
+iabbrev ddate <C-R>=strftime("%Y-%m-%d")<CR>
+
+" Insert a console statements
+iabbrev clg console.log(
+iabbrev cld debugger;
+iabbrev clda console.debug(arguments
+
+iabbrev clx /** Todo: remove before commit */
+\<CR> console.log('=====>');
+\<CR> console.log(value);
+\<CR> console.log('=====x');
+
+" Insert a jsdoc block
+iabbrev jxx /**
+\<CR> *
+\<CR> *
+\<CR> **/
+
 " copy current file name (relative/absolute) to system clipboard
 
 if has("mac") || has("gui_macvim") || has("gui_mac")
