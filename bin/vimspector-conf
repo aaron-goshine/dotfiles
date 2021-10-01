@@ -1,0 +1,23 @@
+#!/bin/bash
+
+echo "$(cat <<END
+{
+  "configurations": {
+    "nodeApp": {
+      "adapter": "vscode-node",
+      "configuration": {
+        "request": "launch",
+        "protocol": "auto",
+        "externalConsole": true,
+        "stopAtEntry": true,
+        "console": "integratedTerminal",
+        "program": "\${workspaceRoot}/app.js",
+        "cwd": "\${workspaceRoot}"
+      }
+    }
+  }
+} 
+END
+)" > .vimspector.json
+
+echo "vimspector.json created"

@@ -54,3 +54,6 @@ cask "qlprettypatch"
 cask "qlstephen"
 cask "quicklook-csv"
 cask "quicklook-json"
+brew "rlwrap"
+
+
