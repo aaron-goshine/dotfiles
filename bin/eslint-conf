@@ -1,10 +1,15 @@
+#!/bin/bash
+
+echo "$(cat <<END
+
 module.exports = {
   env: {
     browser: true,
-    es2021: true
+    es2021: true,
+    node: true
   },
   extends: [
-    'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
     'standard'
   ],
   parserOptions: {
@@ -28,6 +33,9 @@ module.exports = {
   rules: {
     semi: ['error', 'always'],
     'semi-spacing': ['error', { before: false, after: true }]
-
   }
 };
+END
+)" > .eslintrc.js
+
+echo ".eslintrc.js  created"

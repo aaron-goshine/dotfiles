@@ -116,6 +116,7 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 alias reload="clear && exec $SHELL -l"
 
 alias vi='vim'
+alias v='vim'
 alias dot='cd ~/.dotfiles/'
 alias todo='cd ~/DAILY/'
 

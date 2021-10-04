@@ -13,3 +13,5 @@ vim/sessions/*
 vim/undo/*
 *server.pem
 zsh/oh-my-zsh/cache/.zsh-update
+
+*/.DS_Store

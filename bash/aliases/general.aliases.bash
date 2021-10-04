@@ -36,7 +36,7 @@ alias dt="cd ~/Desktop"
 alias wk="cd ~/workspace"
 alias gw="cd ~/workspace/Go"
 alias gb="cd ~/GITHUB"
-alias ic="cd ~/Library/Mobile\ Documents"
+alias ic="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/"
 
 # Desktop Programs
 alias o="open"
@@ -133,11 +133,10 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="clear && exec $SHELL -l"
 
-alias vi='vim'
+alias v='vim'
 alias dot='cd ~/.dotfiles/'
 alias todo='cd ~/DAILY/'
 
-alias icloudedir='vim  ~/Library/Mobile\ Documents/com~apple~CloudDocs/'
 # alias setvw='source /usr/local/bin/virtualenvwrapper.sh'
 alias pysrv='python -m SimpleHTTPServer 9000'
 alias srvr='python -m SimpleHTTPServer 9000'
