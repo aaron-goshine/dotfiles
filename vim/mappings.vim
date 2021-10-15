@@ -26,8 +26,8 @@ nnoremap  <silent> vy ggVG
 " Hat-tip http://vimbits.com/bits/11
 nnoremap  <silent> Y y$
 " Just to beginning and end of lines easier.
-noremap  <silent> H ^
-noremap  <silent> L $
+" noremap  <silent> H ^
+" noremap  <silent> L $
 " Create newlines without entering insert mode
 nnoremap  <silent> go o<Esc>k
 nnoremap  <silent> gO O<Esc>j
@@ -72,8 +72,8 @@ vnoremap <C-k> 15gkzz
 " ---------------
 
 " Let's make escape better, together.
-inoremap jk <Esc>
-inoremap JK <Esc>
+" inoremap jk <Esc>
+" inoremap JK <Esc>
 
 nnoremap <silent> § :e ~/.dotfiles/vim/vimrc.vim<CR>
 

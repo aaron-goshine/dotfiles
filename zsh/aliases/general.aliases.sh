@@ -222,3 +222,5 @@ alias unmute="osascript -e 'set volume output muted false'"
 # Pin to the tail of long commands for an audible alert after long processes
 ## curl http://downloads.com/hugefile.zip; lmk
 alias lmk="say 'Process complete.'"
+
+alias nf="npm init fastify  -- --integrate && npm install "
