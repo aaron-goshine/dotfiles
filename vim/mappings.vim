@@ -52,7 +52,7 @@ nnoremap <silent> g= :wincmd =<CR>
 " Swap Windows
 nnoremap <silent> gx :wincmd x<CR>
 "save on enter
-nnoremap <silent> <return> :w<CR>
+" nnoremap <silent> <return> :w<CR>
 
 " ---------------
 " Modifer Mappings
