@@ -24,6 +24,8 @@ if $LINTFIX == 'true'
         \   'javascript': [$JSLINTER],
         \   'jsx': [$JSLINTER],
         \   'json': [$JSLINTER],
+        \   'css': ['stylelint'],
+        \   'sass': ['stylelint'],
         \   'python': ['autopep8', 'yapf'],
         \}
 endif

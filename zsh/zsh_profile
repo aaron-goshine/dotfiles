@@ -102,9 +102,9 @@ export HH_CONFIG=hicolor         # get more colors
 
 eval "$(direnv hook zsh)"
 # open tmux by default
-if [ -z "$TMUX" ]; then
-  tmux a 2> /dev/null || tmux 
-fi
+# if [ -z "$TMUX" ]; then
+#   tmux a 2> /dev/null || tmux 
+# fi
 
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
