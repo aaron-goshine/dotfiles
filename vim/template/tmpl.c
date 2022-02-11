@@ -1,9 +1,5 @@
-#include <Foundation/Foundation.h>
+#include <stdio.h>
 
-int main (int argc, const char * argv[]){
-	NSAutoreleasePool  * pool = [[NSAutoreleasePool alloc] init];
-
-	[pool drain];
+int main (){
 	return 0;
-
 }

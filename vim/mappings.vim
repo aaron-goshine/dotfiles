@@ -71,9 +71,9 @@ vnoremap <C-k> 15gkzz
 " Insert Mode Mappings
 " ---------------
 
-" Let's make escape better, together.
-" inoremap jk <Esc>
-" inoremap JK <Esc>
+"Let's make escape better, together.
+inoremap jk <Esc>
+inoremap JK <Esc>
 
 nnoremap <silent> § :e ~/.dotfiles/vim/vimrc.vim<CR>
 
