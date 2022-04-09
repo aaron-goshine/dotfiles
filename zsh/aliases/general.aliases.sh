@@ -123,14 +123,14 @@ alias todo='cd ~/DAILY/'
 
 alias icloudedir='vim  ~/Library/Mobile\ Documents/com~apple~CloudDocs/'
 # alias setvw='source /usr/local/bin/virtualenvwrapper.sh'
-alias pysrv='python -m SimpleHTTPServer 9000'
-alias srvr='python -m SimpleHTTPServer 9000'
+alias pysrv='python3 -m http.server'
+alias srvr='python3 -m http.server'
 alias psrv='php -S localhost:8000'
 
 # Unix octal permision table, just a reminder.
 # if you intend to mix your own, just be careful
-# of who can write and execute file
-   # rwx 7
+# of who can write and execute f:ile
+   # rwx e:
    # rw- 6
    # r-x 5
    # r-- 4

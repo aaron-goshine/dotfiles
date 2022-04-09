@@ -60,21 +60,6 @@
 
 [alias]
   # Merge GitHub pull request on top of the `master` branch
-  mpr = "!f() { \
-    if [ $(printf \"%s\" \"$1\" | grep '^[0-9]\\+$' > /dev/null; printf $?) -eq 0 ]; then \
-    git fetch origin refs/pull/$1/head:pr/$1 && \
-    git rebase master pr/$1 && \
-    git checkout master && \
-    git merge pr/$1 && \
-    git branch -D pr/$1 && \
-    git commit --amend -m \"$(git log -1 --pretty=%B)\n\nCloses #$1.\"; \
-    fi \
-    }; f"
-# Find FIXME, TODO, etc
-  n = !"git ls-files | xargs notes | awk -F: '{ print $1,$2; print $3,$4; print $5}' | grc conf.notes "
-  permission-reset = !git diff -p -R --no-color | grep -E \"^(diff|(old|new) mode)\" --color=never | git apply
-  permission-reset = !git diff -p -R --no-color | grep -E \"^(diff|(old|new) mode)\" --color=never | git apply
-  ci = duet-commit
 
 [merge]
   tool = vimdiff
@@ -83,3 +68,7 @@
   default = current
 [pager]
 	branch = false
+[user]
+	name = aaron-goshine
+	email = greenlig@gmail.com
+[pull]
