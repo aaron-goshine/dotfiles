@@ -212,8 +212,6 @@ cnoreabbrev <expr> dc 'call vimspector#Continue()<CR>'
 cnoreabbrev <expr> dt 'call vimspector#ToggleBreakpoint()<CR>'
 
 
-
-
 nmap <Leader>dk <Plug>VimspectorRestart
 nmap <Leader>dh <Plug>VimspectorStepOut
 nmap <Leader>dl <Plug>VimspectorStepInto

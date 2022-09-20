@@ -102,19 +102,8 @@ success "done"
 t1=$(get_ultra_rule_str 'Installing vim plugins' 0 0)
 echo "$t1"
 
-git clone https://github.com/k-takata/minpac.git ~/.vim/pack/minpac/opt/minpac
-
-if test $(which mvim)
-then
-  mvim -v +PackUpdate  +qall
-else
-  if test $(which vim)
-  then
-    vim +PackUpdate +qall
-  else
-    fail 'mvim or vim not found in path.'
-  fi
-fi
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 cd $DOTDIR/vim/
 rm -rf .tmp .backup .temp .undo

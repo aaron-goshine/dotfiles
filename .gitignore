@@ -8,6 +8,8 @@ vim/.temp/*
 vim/.tmp/*
 vim/.undo/*
 vim/pack/*
+vim/plug/*
+./vim/plug/
 vim/init.vim
 vim/sessions/*
 vim/undo/*
