@@ -121,10 +121,7 @@ Plug 'aaron-goshine/swapvim'
 Plug 'puremourning/vimspector'
 let g:vimspector_enable_mappings = 'HUMAN'
 let g:vimspector_test_plugin_path = expand( '<sfile>:p:h:h' )
-set mouse=a
 set noequalalways
-let mapleader = ','
-let maplocalleader = "\<Space>"
 let &runtimepath = &runtimepath . ',' . g:vimspector_test_plugin_path
 "========================================
 Plug 'vim-test/vim-test'

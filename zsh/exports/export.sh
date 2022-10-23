@@ -15,7 +15,7 @@ export VIMDATA="$HOME/.vim"
 export PROJECT_HOME="$HOME/Project"
 export WORKON_HOME="$HOME/.virtualenvs"
 export VIRTENV="$HOME/.virtualenvs"
-export PYTHONSTARTUP="$HOME/.dotfiles/xrc/pystartup"
+export PYTHONSTARTUP="$HOME/.dotfiles/config/pystartup"
 
 export NODE_REPL_HISTORY_FILE="~/.node_history";
 export HISTSIZE="32768";

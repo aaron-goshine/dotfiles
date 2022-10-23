@@ -7,12 +7,6 @@
 let mapleader=","
 let maplocalleader = "\\"
 
-" ----------------------------------------
-" Abbreviation
-" ----------------------------------------
-iabbrev ddate <C-R>=strftime("%Y-%m-%d")<CR>
-iabbrev clg console.log();<Left><Left>
-
 
 " ---------------
 " Regular Mappings
@@ -37,7 +31,8 @@ nnoremap <silent> * :let stay_star_view = winsaveview()<cr>*:call winrestview(st
 " ---------------
 " Window Movement
 " ---------------
-nnoremap <silent> 1 <c-w>w
+" nnoremap <silent> 1 <c-w>w
+" nnoremap 1 <c-w>w
 nnoremap <silent> gh :WriteBufferIfNecessary<CR>:wincmd h<CR>
 nnoremap <silent> <M-h> :wincmd h<CR>
 nnoremap <silent> gj :WriteBufferIfNecessary<CR>:wincmd j<CR>
@@ -45,7 +40,6 @@ nnoremap <silent> gk :WriteBufferIfNecessary<CR>:wincmd k<CR>
 nnoremap <silent> <M-k> :wincmd k<CR>
 nnoremap <silent> gl :WriteBufferIfNecessary<CR>:wincmd l<CR>
 nnoremap <silent> <M-l> :wincmd l<CR>
-nnoremap 1 <c-w>w
 
 " Equal Size Windows
 nnoremap <silent> g= :wincmd =<CR>
@@ -96,15 +90,8 @@ nnoremap <Leader>t, :Tabularize comma<CR>
 vnoremap <Leader>t, :Tabularize comma<CR>
 
 nnoremap <silent><leader>cc :TComment<CR>
-vnoremap <silent><leader>cc :TComment<CR>
 nnoremap <silent><leader>cb :TCommentBlock<CR>
-vnoremap <silent><leader>cb :TCommentBlock<CR>
 
-nmap <leader>gj <plug>(signify-next-hunk)
-nmap <leader>gk <plug>(signify-prev-hunk)
-
-vmap <expr>  ++  VMATH_YankAndAnalyse()
-nmap         ++  vip++
 " Format a json file with Python's built in json.tool.
 nnoremap <leader>fj :%!python -m json.tool<CR>
 vnoremap <leader>fj :'<,'>!python -m json.tool<CR>
@@ -141,14 +128,15 @@ nnoremap <silent> <leader>vs :vsplit<Bar>:wincmd l<CR>:wincmd =<CR>
 
 " Close the current window
 nnoremap <silent> <m-w> :close<CR>
-
+" ----------------------------------------
+" Abbreviation
+" ----------------------------------------
 " Insert date
-iabbrev ddate <C-R>=strftime("%Y-%m-%d")<CR>
-
+iabbrev ddate <C-R>=strftime("%d-%m-%Y")<CR>
 " Insert a console statements
-iabbrev clg console.log(
+iabbrev clg console.log();
 iabbrev cld debugger;
-iabbrev clda console.debug(arguments
+iabbrev clda console.debug(arguments);<Left><Left>
 
 iabbrev clx /** Todo: remove before commit */
 \<CR> console.log('=====>');

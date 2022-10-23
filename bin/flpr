@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """
 Flipper is simple string Encryption programme
 Encrypts or decrypt a string
@@ -79,8 +79,9 @@ def encode_string(chars, key):
     @param key number
     @return sting
     """
-    chars = [hex(ord(char[1]) ^ ((char[0] << 8) + key))
-             for char in enumerate(chars)]
+    chars = [
+        hex(ord(char[1]) ^ ((char[0] << 8) + key)) for char in enumerate(chars)
+    ]
 
     cipher = ''.join(chars)
     return cipher.replace('0x', 'r') + "=="
@@ -98,8 +99,8 @@ def decode_cipher(chars, key):
     hexico = chars.split('r')[1:]
     for chunk in enumerate(hexico):
         try:
-            hexico[chunk[0]] = chr(int('0x' + chunk[1], 16) ^
-                                   ((chunk[0] << 8) + key))
+            hexico[chunk[0]] = chr(
+                int('0x' + chunk[1], 16) ^ ((chunk[0] << 8) + key))
         except ValueError:
             sys.stdout.writelines('\nYou cipher is corrupted or your key\
                     does not match!\n')
@@ -108,6 +109,7 @@ def decode_cipher(chars, key):
 
 
 def main(args):
+    # return 1
     """
     Flipper is simple string Encryption programme
     Encrypts or decrypt a string
@@ -126,16 +128,20 @@ def main(args):
     if not key:
         return 1
 
-    chars = args.chars
-    if args.clip:
+    if not args.chars:
         chars = get_clipboard_data()
+    else:
+        chars = args.chars
 
     len_of_word = len(chars)
     if len_of_word > 0 and chars[-2:] == '==':
         cipher = decode_cipher(chars, key)
     else:
         cipher = encode_string(chars, key)
-    set_clipboard_data(cipher)
+
+        print(len_of_word, chars, cipher)
+
+    # set_clipboard_data(cipher)
 
     if not args.silent:
         sys.stdout.writelines("\n" + cipher + "\n")
@@ -145,18 +151,28 @@ if __name__ == "__main__":
     ARGS_PARSER = argparse.ArgumentParser(description='Encrypts or\
             decrypt a string')
 
-    ARGS_PARSER.add_argument('-c', '--clip', dest='clip', action='store_true',
+    ARGS_PARSER.add_argument('-c',
+                             '--clip',
+                             dest='clip',
+                             action='store_true',
                              help='Process content of clip, use with care')
 
-    ARGS_PARSER.add_argument('-k', '--key', dest='key', type=str,
+    ARGS_PARSER.add_argument('-k',
+                             '--key',
+                             dest='key',
+                             type=str,
                              help='Encryption key (default: uses text content \
                                 in (~/.flprc) as key)')
 
-    ARGS_PARSER.add_argument('-s', '--silent', dest='silent',
+    ARGS_PARSER.add_argument('-s',
+                             '--silent',
+                             dest='silent',
                              action='store_true',
                              help='stop print to standard out')
 
-    ARGS_PARSER.add_argument('chars', metavar='STRING', type=str,
+    ARGS_PARSER.add_argument('chars',
+                             metavar='STRING',
+                             type=str,
                              help='A string of characters or to process')
 
     main(ARGS_PARSER.parse_args())

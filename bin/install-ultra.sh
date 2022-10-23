@@ -32,9 +32,9 @@ slimlinker $DOTDIR/ipython/
 # instead of symlinking gitconfig, copy safely 
 rsync -a -v --ignore-existing  $DOTDIR/git/gitconfig ~/.gitconfig
 
-for FILE in $(ls $DOTDIR/xrc/); 
+for FILE in $(ls $DOTDIR/config/); 
 do
-  slimlinker $DOTDIR/xrc/$FILE
+  slimlinker $DOTDIR/config/$FILE
 done;
 
 # If you use icloud drive to sync various files across multiple systems
