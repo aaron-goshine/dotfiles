@@ -57,10 +57,12 @@ autocmd FileType css set listchars=tab:\|\
 autocmd FileType html set listchars=tab:\|\
 autocmd FileType python set listchars=tab:\|\
 autocmd FileType yaml set listchars=tab:\|\
+autocmd FileType rust set listchars=tab:\|\
+autocmd FileType typescript set listchars=tab:\|\
 
 autocmd FileType yaml set nospell
 autocmd FileType json set nospell
-
+autocmd FileType go set nolist
 
 " autocmd! FileType * call SetDictionary()
 autocmd! BufNewFile * call LoadTemplate()

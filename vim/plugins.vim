@@ -74,7 +74,8 @@ let g:airline_section_z = '%3p%% %{substitute(line("."), "\\v(\\d)((\\d\\d\\d)+\
 Plug 'aaron-goshine/vim-follow-my-lead'
 let g:fml_all_sources = 1
 "=========================================
-Plug 'fatih/vim-go'
+
+Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_fields = 1
@@ -83,7 +84,7 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 "=========================================
 Plug 'sheerun/vim-polyglot'
-let g:polyglot_disabled = ['javascript', 'markdown', 'jsx']
+let g:polyglot_disabled = ['javascript', 'markdown', 'jsx', 'python' ]
 let g:vim_json_syntax_conceal = 1
 "=========================================
 Plug 'aaron-goshine/colorv.vim'
@@ -112,11 +113,72 @@ Plug 'ternjs/tern_for_vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'ervandew/supertab'
 Plug 'godlygeek/tabular'
+
+"=========================================
 Plug 'pangloss/vim-javascript'
+"=========================================
+
 Plug 'elzr/vim-json'
 Plug 'mxw/vim-jsx'
 Plug 'tpope/vim-fugitive'
 Plug 'aaron-goshine/swapvim'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
+"*****************************************************************************
+"" Custom bundles
+"*****************************************************************************
+" c
+Plug 'vim-scripts/c.vim', {'for': ['c', 'cpp']}
+Plug 'ludwig/split-manpage.vim'
+
+" go
+"" Go Lang Bundle
+
+
+" haskell
+"" Haskell Bundle
+Plug 'eagletmt/neco-ghc'
+Plug 'dag/vim2hs'
+Plug 'pbrisbin/vim-syntax-shakespeare'
+
+
+" html
+"" HTML Bundle
+Plug 'hail2u/vim-css3-syntax'
+Plug 'gko/vim-coloresque'
+Plug 'tpope/vim-haml'
+Plug 'mattn/emmet-vim'
+
+
+" lua
+"" Lua Bundle
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-lua-ftplugin'
+Plug 'xolox/vim-lua-inspect'
+'
+
+" python
+"" Python Bundle
+Plug 'davidhalter/jedi-vim'
+Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
+
+" Rust.vim
+Plug 'rust-lang/rust.vim'
+
+" Async.vim
+Plug 'prabirshrestha/async.vim'
+
+" Vim lsp
+Plug 'prabirshrestha/vim-lsp'
+
+
+" typescript
+Plug 'leafgarland/typescript-vim'
+
+"*****************************************************************************
+
+
 "=========================================
 Plug 'puremourning/vimspector'
 let g:vimspector_enable_mappings = 'HUMAN'
@@ -124,6 +186,7 @@ let g:vimspector_test_plugin_path = expand( '<sfile>:p:h:h' )
 set noequalalways
 let &runtimepath = &runtimepath . ',' . g:vimspector_test_plugin_path
 "========================================
+" test
 Plug 'vim-test/vim-test'
 
 call plug#end()
