@@ -5,7 +5,7 @@
 " Set leader to ,
 " Note: This line MUST come before any <leader> mappings
 let mapleader=","
-let maplocalleader = "\\"
+let maplocalleader = ","
 
 
 " ---------------
@@ -90,7 +90,7 @@ nnoremap <Leader>t, :Tabularize comma<CR>
 vnoremap <Leader>t, :Tabularize comma<CR>
 
 nnoremap <silent><leader>cc :TComment<CR>
-nnoremap <silent><leader>cb :TCommentBlock<CR>
+vnoremap <silent><leader>cc :TCommentBlock<CR>
 
 " Format a json file with Python's built in json.tool.
 nnoremap <leader>fj :%!python -m json.tool<CR>
