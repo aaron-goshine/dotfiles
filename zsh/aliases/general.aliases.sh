@@ -22,6 +22,7 @@ alias ga="git add --all && git commit --amend --no-edit && git push -f"
 alias cm="git commit"
 alias p="git push"
 alias ic="cd ~/Library/Mobile\ Documents"
+alias gitgone=" git add . && cm --no-edit --amend && p -f"
 
 # Desktop Programs
 alias o="open"
