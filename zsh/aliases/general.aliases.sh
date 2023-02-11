@@ -23,6 +23,7 @@ alias cm="git commit"
 alias p="git push"
 alias ic="cd ~/Library/Mobile\ Documents"
 alias gitgone=" git add . && cm --no-edit --amend && p -f"
+alias awsacc="grep   -Eo \"[[:digit:]]{12}\" ~/.aws/config | sort | uniq"
 
 # Desktop Programs
 alias o="open"
