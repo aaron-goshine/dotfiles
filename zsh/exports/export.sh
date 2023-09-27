@@ -44,5 +44,3 @@ export IRC_CLIENT='irssi'
 # Set this to the command you use for todo.txt-cli
 export TODO="task"
 
-export NVM_DIR="~/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"

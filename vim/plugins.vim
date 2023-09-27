@@ -188,5 +188,8 @@ let &runtimepath = &runtimepath . ',' . g:vimspector_test_plugin_path
 "========================================
 " test
 Plug 'vim-test/vim-test'
+"
+" Copilot - A I Coding
+Plug 'github/copilot.vim'
 
 call plug#end()
