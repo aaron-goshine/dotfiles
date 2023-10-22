@@ -1,0 +1,27 @@
+" =============================================================================
+" Author: Aaron Goshine
+" Description: The Vim Configuration of Superheros
+" Version: 1000.99.99
+" =============================================================================
+
+" Source Custom Functions and Plugins
+source ~/.vim/functions.vim
+source ~/.vim/plugins.vim
+
+" Enable Automatic File Type Detection
+filetype plugin indent on
+
+" Platform-Specific Configuration
+source ~/.vim/platforms.vim
+
+" Core Configuration
+source ~/.vim/config.vim
+
+" Custom Commands
+source ~/.vim/commands.vim
+
+" Key Mappings
+source ~/.vim/mappings.vim
+
+" Auto Commands
+source ~/.vim/autocmds.vim

@@ -9,8 +9,6 @@ if &compatible
 endif
 filetype off
 
-
-
 call plug#begin('~/.dotfiles/vim/plug')
 "=========================================
 Plug 'ycm-core/YouCompleteMe'
@@ -134,13 +132,6 @@ Plug 'ludwig/split-manpage.vim'
 
 " go
 "" Go Lang Bundle
-
-
-" haskell
-"" Haskell Bundle
-Plug 'eagletmt/neco-ghc'
-Plug 'dag/vim2hs'
-Plug 'pbrisbin/vim-syntax-shakespeare'
 
 
 " html

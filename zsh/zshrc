@@ -1,0 +1,36 @@
+# Configurations
+export DOTFILEHOME="Library/Mobile Documents/com~apple~CloudDocs/dotfiles"
+export ZSH="$HOME/$DOTFILEHOME/zsh/oh-my-zsh/"
+export DOTS="$HOME/$DOTFILEHOME"
+export DOTSEC="$HOME/$DOTSECURE"
+export ZSH_THEME="af-magic"
+export MANPATH="/usr/local/man:$MANPATH"
+export LANG=en_US.UTF-8
+export EDITOR='vim'
+export HH_CONFIG=hicolor
+
+# Plugins
+plugins=(git)
+
+# Source files
+source $ZSH/oh-my-zsh.sh
+source $HOME/.local/.localenv.sh
+for file in $DOTS/zsh/exports/*.sh; do source $file; done
+for file in $DOTS/zsh/plugins/*.sh; do source $file; done
+for file in $DOTS/zsh/aliases/*.sh; do source $file; done
+
+# Miscellaneous configurations
+eval "$(direnv hook zsh)"
+
+# Automatically start tmux if not already in a tmux session
+if [ -z "$TMUX" ]; then
+  tmux a 2> /dev/null || tmux
+fi
+
+# iTerm2 shell integration
+[ -e "${HOME}/.iterm2_shell_integration.zsh" ] && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# Git and Bash completion
+git config --global pager.branch false
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/terraform terraform
