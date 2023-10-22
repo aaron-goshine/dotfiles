@@ -41,7 +41,7 @@
   newHighlight = "green bold 22"
 
 [commit]
-  template = ~/.dotfiles/git/template.txt
+  template = "~/Library/Mobile Documents/com~apple~CloudDocs/dotfiles/git/template.txt"
 
 [filter "media"]
   required = true
