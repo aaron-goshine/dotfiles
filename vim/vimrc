@@ -7,7 +7,6 @@
 " Source Custom Functions and Plugins
 source ~/.vim/functions.vim
 source ~/.vim/plugins.vim
-
 " Enable Automatic File Type Detection
 filetype plugin indent on
 

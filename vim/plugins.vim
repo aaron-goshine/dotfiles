@@ -9,9 +9,9 @@ if &compatible
 endif
 filetype off
 
-call plug#begin('~/.dotfiles/vim/plug')
+call plug#begin('~/.vim/plug')
 "=========================================
-Plug 'ycm-core/YouCompleteMe'
+Plug '~/.vimplugin/YouCompleteMe'
 "=========================================
 Plug 'w0rp/ale'
 let g:ale_sign_error = '✖'
@@ -66,7 +66,6 @@ let g:airline#extensions#hunks#enabled = 0
 let g:airline_section_b = '%{substitute(getcwd(), ".*\/", "", "g")} '
 let g:airline_section_c = '%t'
 let g:airline_section_y = ''
-let g:airline_section_z = '%3p%% %#__accent_bold#%4l%#__restore__#:%3'
 let g:airline_section_z = '%3p%% %{substitute(line("."), "\\v(\\d)((\\d\\d\\d)+\\d@!)@=", "\\1,", "g")}|%{substitute(line("$"), "\\v(\\d)((\\d\\d\\d)+\\d@!)@=", "\\1,", "g")}'
 "=========================================
 Plug 'aaron-goshine/vim-follow-my-lead'
@@ -108,6 +107,7 @@ hi IndentGuidesOdd  ctermbg=black
 hi IndentGuidesEven ctermbg=darkgrey
 "=========================================
 Plug 'ternjs/tern_for_vim'
+
 Plug 'ryanoasis/vim-devicons'
 Plug 'ervandew/supertab'
 Plug 'godlygeek/tabular'

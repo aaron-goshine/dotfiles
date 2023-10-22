@@ -15,11 +15,11 @@
 
 #!/bin/bash
 
-SSH_CONFIG="$HOME/.ssh/config"
+export SSH_CONFIG="$HOME/.ssh/config"
 
 function list_keys {
   echo "Listing SSH keys:"
-  ls -l $HOME/.ssh/*.pub 2>/dev/null
+  find $HOME/.ssh/ -name '*.pub'
 }
 
 
@@ -80,7 +80,7 @@ else
 }
 
 if [ "$#" -eq 0 ]; then
-  echo "Usage: $0 {add|delete|list|search} [options]"
+  echo "Usage: $0 {add|delete|list|keys|connect|search} [options]"
   exit 1
 fi
 
