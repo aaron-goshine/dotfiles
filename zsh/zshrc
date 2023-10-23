@@ -1,24 +1,15 @@
+umask 077
 # Configurations
-export DOTFILEHOME="Library/Mobile Documents/com~apple~CloudDocs/dotfiles"
-export ZSH="$HOME/$DOTFILEHOME/zsh/oh-my-zsh/"
-export DOTS="$HOME/$DOTFILEHOME"
-export DOTSEC="$HOME/$DOTSECURE"
-export ZSH_THEME="af-magic"
-export MANPATH="/usr/local/man:$MANPATH"
-export LANG=en_US.UTF-8
-export EDITOR='vim'
-export HH_CONFIG=hicolor
+export DOT="$HOME/Library/Mobile Documents/com~apple~CloudDocs/dotfiles"
+for file in $DOT/zsh/exports/*.sh; do source $file; done
+for file in $DOT/zsh/plugins/*.sh; do source $file; done
+for file in $DOT/zsh/aliases/*.sh; do source $file; done
+source $ZSH/oh-my-zsh.sh
+source $HOME/.local/.localenv.sh
+
 
 # Plugins
 plugins=(git)
-
-# Source files
-source $ZSH/oh-my-zsh.sh
-source $HOME/.local/.localenv.sh
-for file in $DOTS/zsh/exports/*.sh; do source $file; done
-for file in $DOTS/zsh/plugins/*.sh; do source $file; done
-for file in $DOTS/zsh/aliases/*.sh; do source $file; done
-
 # Miscellaneous configurations
 eval "$(direnv hook zsh)"
 
@@ -28,9 +19,8 @@ if [ -z "$TMUX" ]; then
 fi
 
 # iTerm2 shell integration
-[ -e "${HOME}/.iterm2_shell_integration.zsh" ] && source "${HOME}/.iterm2_shell_integration.zsh"
+[ -e "${HOME}.iterm2_shell_integration.zsh" ] && source "${HOME}/.iterm2_shell_integration.zsh"
 
-# Git and Bash completion
 git config --global pager.branch false
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/local/bin/terraform terraform
+autoload -U +X compinit && compinit
+compdef _terraform terraform

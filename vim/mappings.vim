@@ -16,6 +16,10 @@ nnoremap gj :WriteBufferIfNecessary<CR>:wincmd j<CR>
 nnoremap gk :WriteBufferIfNecessary<CR>:wincmd k<CR>
 nnoremap gl :WriteBufferIfNecessary<CR>:wincmd l<CR>
 
+nnoremap <leader>p :CtrlP<CR>
+nnoremap <leader>b :CtrlPBuffer<CR>
+nnoremap <leader>m :CtrlPMRUFiles<CR>
+
 " Modifer Mappings
 inoremap <C-l> <C-x><C-l>
 nnoremap <C-j> 15gjzz

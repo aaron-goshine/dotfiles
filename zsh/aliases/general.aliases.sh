@@ -4,72 +4,10 @@
 # Date: (Today's Date)
 # Description: (Brief description of the script)
 
-# Your code here
-#! /bin/bash
-# Author: Aaron
-# Script: Your Script Name
-# Date: (Today's Date)
-# Description: (Brief description of the script)
-
-# Your code here
-#! /bin/bash
-# Author: Aaron
-# Script: Your Script Name
-# Date: (Today's Date)
-# Description: (Brief description of the script)
-
-# Your code here
-#! /bin/bash
-# Author: Aaron
-# Script: Your Script Name
-# Date: (Today's Date)
-# Description: (Brief description of the script)
-
-# Your code here
-#! /bin/bash
-# Author: Aaron
-# Script: Your Script Name
-# Date: (Today's Date)
-# Description: (Brief description of the script)
-
-# Your code here
-#! /bin/bash
-# Author: Aaron
-# Script: Your Script Name
-# Date: (Today's Date)
-# Description: (Brief description of the script)
-
-# Your code here
-#! /bin/bash
-# Author: Aaron
-# Script: Your Script Name
-# Date: (Today's Date)
-# Description: (Brief description of the script)
-
-# Your code here
-#! /bin/bash
-# Author: Aaron
-# Script: Your Script Name
-# Date: (Today's Date)
-# Description: (Brief description of the script)
-
-# Your code here
-#! /bin/bash
-# Author: Aaron
-# Script: Your Script Name
-# Date: (Today's Date)
-# Description: (Brief description of the script)
-
-# Your code here
-# General Utilities
-alias ipy='ipython'
-alias md='mkdir -p'
-alias rd='rmdir'
-
 # Navigation
 alias wk="cd ~/workspace"
-alias dot="cd '$DOTS'"
-alias dotsec="cd '$DOTSEC'"
+alias dot="cd '$DOT'"
+alias dots="cd '$DOTS'"
 
 # Git Operations
 alias s="git status"

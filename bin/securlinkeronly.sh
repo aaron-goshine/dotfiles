@@ -27,15 +27,4 @@ function symlinker() {
     echo "Directory $DOTSECURE_DIR does not exist."
   fi
 }
-mkdir ~/.vimplugin
- npm install -g typescript
- brew install lua
- brew install luarocks
- pip3 install python-language-server
-
-ln -s -f ~/Library/Mobile\ Documents/com~apple~CloudDocs/dotfiles/git/gitconfig ~/.gitconfig
-ln -s -f ~/Library/Mobile\ Documents/com~apple~CloudDocs/dotfiles/vim ~/.vim
-ln -s -f ~/Library/Mobile\ Documents/com~apple~CloudDocs/dotfiles/zsh/zshrc ~/.zshrc
-ln -s -f ~/Library/Mobile\ Documents/com~apple~CloudDocs/dotfiles/bin ~/bin
-
 symlinker

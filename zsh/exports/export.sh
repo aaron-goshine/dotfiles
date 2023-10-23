@@ -1,8 +1,19 @@
-# Go Environment
+#! /bin/bash
+# Author: Aaron
+# Script: Your Script Name
+# Date: (Today's Date)
+# Description: (Brief description of the script)
+
+export DOTS="$HOME/Library/Mobile Documents/com~apple~CloudDocs/dotsecure"
+export ZSH="$DOT/zsh/oh-my-zsh/"
+export ZSH_THEME="af-magic"
+export MANPATH="/usr/local/man:$MANPATH"
+export LANG=en_US.UTF-8
+export EDITOR='vim'
+export HH_CONFIG=hicolor
 export GOPATH="$HOME/workspace/Go"
 export GOROOT="/usr/local/opt/go/libexec"
 
-# PATH Configuration
 export PATH="$PATH:$HOME/.local/bin:$HOME/bin:$HOME/.cask/bin:/usr/local/MacGPG2/bin:/usr/local/share/npm/bin:/opt/local/bin:/usr/local/go/bin:$HOME/workspace/Go/bin:/usr/local/opt/go/libexec/bin:/usr/local/sbin:$HOME/miniconda3/bin:./"
 
 # Terminal Appearance

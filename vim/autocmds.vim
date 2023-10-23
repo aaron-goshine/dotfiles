@@ -25,7 +25,7 @@ autocmd FileType html,jsx,css,javascript,typescript,yaml setlocal ts=2 sts=2 sw=
 autocmd FileType python,php setlocal ts=4 sts=4 sw=4 expandtab
 autocmd FileType [javascript,typescript,css,html,python,yaml,rust] setlocal listchars=tab:\|\
 autocmd FileType yaml,json,go setlocal nospell
-autocmd FileType * call LoadTemplate()
+autocmd BufNewFile * call LoadTemplate()
 autocmd BufEnter * silent! lcd %:p:h
 
 " Add current directory to path

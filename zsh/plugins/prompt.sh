@@ -1,15 +1,25 @@
 # Function to print centered text within a title line of width 80
 get_ultra_rule_str() {
   local text="$1"
-  local line_width=80
+  local line_width=$COLUMNS
   local text_width=${#text}
   local padding=$((line_width - text_width))
   local left_padding=$((padding / 2))
   local right_padding=$((padding - left_padding))
-  
-  printf "~%.0s" {1..$left_padding}
+
+  # Create a left pad of tilde (~)
+  for ((i = 0; i < left_padding; i++)); do
+    printf "~"
+  done
+
+  # Print the text
   printf "%s" "$text"
-  printf "~%.0s" {1..$right_padding}
+
+  # Create a right pad of tilde (~)
+  for ((i = 0; i < right_padding; i++)); do
+    printf "~"
+  done
+
   echo
 }
 
