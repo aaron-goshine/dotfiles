@@ -14,7 +14,7 @@ export HH_CONFIG=hicolor
 export GOPATH="$HOME/workspace/Go"
 export GOROOT="/usr/local/opt/go/libexec"
 
-export PATH="$PATH:$HOME/.local/bin:$HOME/bin:$HOME/.cask/bin:/usr/local/MacGPG2/bin:/usr/local/share/npm/bin:/opt/local/bin:/usr/local/go/bin:$HOME/workspace/Go/bin:/usr/local/opt/go/libexec/bin:/usr/local/sbin:$HOME/miniconda3/bin:./"
+export PATH="$PATH:$HOME/.local/bin:/usr/local/bin/:$HOME/bin:$HOME/.cask/bin:/usr/local/MacGPG2/bin:/usr/local/share/npm/bin:/opt/local/bin:/usr/local/go/bin:$HOME/workspace/Go/bin:/usr/local/opt/go/libexec/bin:/usr/local/sbin:$HOME/miniconda3/bin:./"
 
 # Terminal Appearance
 export GREP_OPTIONS="--color=auto"

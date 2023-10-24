@@ -14,9 +14,9 @@ plugins=(git)
 eval "$(direnv hook zsh)"
 
 # Automatically start tmux if not already in a tmux session
-if [ -z "$TMUX" ]; then
-  tmux a 2> /dev/null || tmux
-fi
+#if [ -z "$TMUX" ]; then
+#  tmux a 2> /dev/null || tmux
+#fi
 
 # iTerm2 shell integration
 [ -e "${HOME}.iterm2_shell_integration.zsh" ] && source "${HOME}/.iterm2_shell_integration.zsh"

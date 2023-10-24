@@ -1,0 +1,77 @@
+#! /bin/bash
+# Author: Aaron
+# Script: Your Script Name
+# Date: (Today's Date)
+# Description: (Brief description of the script)
+
+# Check if OPENAI_API_KEY is set
+if [ -z "$OPENAI_API_KEY" ]; then
+  echo "Please set your OPENAI_API_KEY environment variable first."
+  exit 1
+fi
+
+# Function to display API model options
+choose_model() {
+  echo "Select an API model:"
+  options=("gpt-3.5-turbo" "davinci" "curie" "Quit")
+  select model in "${options[@]}"; do
+    case $model in
+      "gpt-3.5-turbo"|"davinci"|"curie")
+        break
+        ;;
+      "Quit")
+        exit 0
+        ;;
+      *)
+        echo "Invalid option."
+        ;;
+    esac
+  done
+}
+
+# Main program starts here
+while true; do
+  choose_model
+  read -p "Enter your message: " message
+API_RESPONSE=$(curl https://api.openai.com/v1/chat/completions \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer $OPENAI_API_KEY" \
+    -d "{
+      \"model\": \"$model\",
+      \"messages\": [{\"role\": \"user\", \"content\": \"$message\"}],
+      \"temperature\": 0.7
+    }")
+
+
+
+CHOICES=$(echo $API_RESPONSE | jq -r '.choices[0].message')
+
+# Use awk to format the output by identifying code blocks and text.
+echo "$CHOICES" | awk '
+BEGIN {
+    in_code_block = 0;
+}
+/^```/ {
+    in_code_block = !in_code_block;
+    if (in_code_block) {
+        print "\nCode:\n";
+    } else {
+        print "\nText:\n";
+    }
+    next;
+}
+
+{
+    if (in_code_block) {
+        print $0;
+    } else {
+        print $0;
+    }
+}
+'
+
+  echo -e "\nDo you want to continue? (yes/no)"
+  read answer
+  [ "$answer" == "no" ] && break
+done
+

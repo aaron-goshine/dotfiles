@@ -28,7 +28,8 @@ alias ips="ifconfig -a | awk '/inet6? /{print $2}'"
 alias update="softwareupdate -i -a; brew update; brew upgrade; brew cleanup"
 alias pipupdate="pip list --outdated --format=freeze | cut -d = -f 1 | xargs -n1 pip install -U"
 alias cleanup="find . -type f -name '*.DS_Store' -delete"
-alias reload="clear; reset; source $HOME/.zshrc"
+alias reload="clear &&exec env -i zsh &&  reset; source $HOME/.zshrc"
+alias k="clear &&exec env -i zsh &&  reset; source $HOME/.zshrc"
 
 
 # Quick Views and Edits
