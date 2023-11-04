@@ -41,10 +41,11 @@ API_RESPONSE=$(curl https://api.openai.com/v1/chat/completions \
       \"messages\": [{\"role\": \"user\", \"content\": \"$message\"}],
       \"temperature\": 0.7
     }")
+echo $API_RESPONSE  
+echo "===============  "
+echo $API_RESPONSE | jq '.choices[].message.content' | sed ':a;N;$!ba;s/\n/\r/g' 
 
-
-
-CHOICES=$(echo $API_RESPONSE | jq -r '.choices[0].message')
+CHOICES='t'
 
 # Use awk to format the output by identifying code blocks and text.
 echo "$CHOICES" | awk '

@@ -5,16 +5,14 @@
 # Description: (Brief description of the script)
 
 export DOTS="$HOME/Library/Mobile Documents/com~apple~CloudDocs/dotsecure"
+
 export ZSH="$DOT/zsh/oh-my-zsh/"
 export ZSH_THEME="af-magic"
 export MANPATH="/usr/local/man:$MANPATH"
 export LANG=en_US.UTF-8
 export EDITOR='vim'
 export HH_CONFIG=hicolor
-export GOPATH="$HOME/workspace/Go"
-export GOROOT="/usr/local/opt/go/libexec"
-
-export PATH="$PATH:$HOME/.local/bin:/usr/local/bin/:$HOME/bin:$HOME/.cask/bin:/usr/local/MacGPG2/bin:/usr/local/share/npm/bin:/opt/local/bin:/usr/local/go/bin:$HOME/workspace/Go/bin:/usr/local/opt/go/libexec/bin:/usr/local/sbin:$HOME/miniconda3/bin:./"
+export PATH="/usr/local/bin/:/sbin:/usr/sbin:/opt/homebrew/bin:$PATH"
 
 # Terminal Appearance
 export GREP_OPTIONS="--color=auto"

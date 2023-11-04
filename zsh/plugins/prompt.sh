@@ -38,9 +38,10 @@ TITLE=$(get_ultra_rule_str ' RTFMP ')
 ULTRANAME=$(get_ultra_rule_str " EXTRAORDINARY $(id -un | awk '{print toupper($0)}') ")
 RULE=$(get_ultra_rule_str '~')
 FMNO=$(get_ultra_rule_str ' ✿ ')
-
+IMO=$(get_ultra_rule_str 'm a hlthy, wlthy ldr, sklld nd nsghtfl, nrchng my wrld.')
 echo "$ULTRANAME"
 echo "$TITLE"
+echo "$IMO"
 echo "$FMNO"
 
 # Profile-based prompt customization
