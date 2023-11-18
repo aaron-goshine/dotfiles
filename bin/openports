@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# Check if a parameter was provided
+if [ -z "$1" ]; then
+    echo "Error: Missing target parameter."
+    echo "Usage: $0 <target>"
+    exit 1
+fi
+
+nmap -sT -F $1 | awk 'BEGIN {
+    print "+------+----------------+--------------------------------------------------+";
+    print "| Line |     Host       |                    Open Ports                     |";
+    print "+------+----------------+--------------------------------------------------+";
+    line_number = 0;
+}
+
+/^Nmap scan report for / {
+    if (host != "" && ports != "") {
+        printf("| %-4d | %-14s | %-48s |\n", ++line_number, host, ports);
+    }
+    host = $NF
+    ports = ""
+}
+
+/^[0-9]+\/tcp/ {
+    gsub(/\/tcp/, "");
+    if (ports != "") ports = ports ", "
+    ports = ports $1
+}
+
+END {
+    if (host != "" && ports != "") {
+        printf("| %-4d | %-14s | %-48s |\n", ++line_number, host, ports);
+    }
+    print "+------+----------------+--------------------------------------------------+";
+}'

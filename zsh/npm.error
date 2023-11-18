@@ -1,0 +1,5 @@
+Failed to resolve "host.discorvered.txt".
+Failed to resolve "host.discorvered.txt".
+WARNING: Service 192.168.4.1:5000 had already soft-matched upnp, but now soft-matched rtsp; ignoring second value
+WARNING: Service 192.168.4.1:5000 had already soft-matched upnp, but now soft-matched sip; ignoring second value
+Failed to resolve "host.discorvered.txt".

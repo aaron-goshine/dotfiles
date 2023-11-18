@@ -12,7 +12,7 @@ export MANPATH="/usr/local/man:$MANPATH"
 export LANG=en_US.UTF-8
 export EDITOR='vim'
 export HH_CONFIG=hicolor
-export PATH="/usr/local/bin/:/sbin:/usr/sbin:/opt/homebrew/bin:$PATH"
+export PATH="$HOME/bin:/usr/local/bin/:/sbin:/usr/sbin:/opt/homebrew/bin:$PATH"
 
 # Terminal Appearance
 export GREP_OPTIONS="--color=auto"

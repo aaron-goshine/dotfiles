@@ -1,45 +1,38 @@
-#! /usr/local/bin/python3
-
-from subprocess import call
+#!/usr/local/bin/python3
 import random
+from subprocess import call, Popen, PIPE
 
-list = []
-ch_len = 10
-index = 0
-score = 0
-
+def fetch_word_definition(word):
+    process = Popen(['minidict', word], stdout=PIPE)
+    (output, err) = process.communicate()
+    exit_code = process.wait()
+    if exit_code == 0:
+        return output.decode('utf-8').strip()
+    return "Definition not found."
 
 word_list = open('/usr/share/dict/words')
+words = [word.strip() for word in word_list if 3 < len(word) < 12]
+random.shuffle(words)
+words = words[:10]
 
-for word in word_list:
-    if len(word) < 12 and len(word) > 3:
-        list.append(str.strip(word))
+score = 0
 
-random.shuffle(list)
-
-
-list = list[0:ch_len]
-
-while True:
-    if (index >= len(list)):
-
-        print('\033[5m Final Score: {}/{}'.format( score, ch_len))
-        break
-
-    cur_word = list[index]
-
-    call(['say', cur_word])
-
-    text = str.strip(str(input('Please type what you heard: ')))
-
-    if(str.lower(text) == str.lower(cur_word)):
-        print('\033[1;32m Well done! \033[0m')
+for index, word in enumerate(words):
+    call(['say', word])
+    user_input = input('Please type what you heard: ').strip()
+    
+    definition = fetch_word_definition(word)
+    if user_input.lower() == word.lower():
+        print('Well done!')
         score += 1
+        print(f"Definition: {definition}")
     else:
         print('=========================================')
-        print('Expected word:', cur_word)
-        print('Entered word: ', text)
-        print('\033[1;31;40m Try again!\033[0m')
+        print(f'Expected word: {word}')
+        print(f"Definition: {definition}")
+        print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+        print(f'Entered word: {user_input}')
+        print('Try again!')
         print('=========================================')
-
-    index += 1
+        
+print(f'Final Score: {score}/{len(words)}')

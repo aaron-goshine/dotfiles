@@ -1,17 +1,15 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """
-Flipper is simple string Encryption programme
-Encrypts or decrypt a string
+Flipper is a simple string encryption and decryption program.
 
 Positional arguments:
-  STRING             A string of characters or to process
+  STRING             String of characters to process
 
 Optional arguments:
-  -h, --help         show this help message and exit
-  -c, --clip         Process content of clip, use with care
-  -k KEY, --key KEY  Encryption key (default: uses text content in (~/.flprc)
-                     as key)
-  -s, --silent       stop print to standard out
+  -h, --help         Show this help message and exit
+  -c, --clip         Process content of clipboard, use with care
+  -k KEY, --key KEY  Encryption key (default: uses text content in ~/.flprc)
+  -s, --silent       Stop printing to standard out
 
 AUTHORS:
     Aaron Goshine, Robert Merriman
@@ -21,158 +19,94 @@ DATE:
 
 import sys
 import os
-import subprocess
 import argparse
-
+import base64
+import hashlib
+from cryptography.fernet import Fernet
 
 def get_clipboard_data():
-    """
-    get the content of your default Clipboard
-    """
-    proc_handle = subprocess.Popen(['pbpaste'], stdout=subprocess.PIPE)
-    proc_handle.wait()
-    data = proc_handle.stdout.read()
-    return data
-
+    try:
+        from tkinter import Tk
+        root = Tk()
+        root.withdraw()
+        return root.clipboard_get()
+    except Exception as e:
+        print(f"Error accessing clipboard: {e}")
+        sys.exit(1)
 
 def set_clipboard_data(data):
-    """
-    set the content of your default Clipboard
-    @param data string
-    @return string
-    """
-    proc_handle = subprocess.Popen(['pbcopy'], stdin=subprocess.PIPE)
-    proc_handle.stdin.writelines(data)
-    proc_handle.stdin.close()
-    proc_handle.wait()
-    sys.stdout.writelines('\nClipboard updated!\n')
-
+    try:
+        from tkinter import Tk
+        root = Tk()
+        root.withdraw()
+        root.clipboard_clear()
+        root.clipboard_append(data)
+        root.update() # now it stays on the clipboard after the window is closed
+        print('\nClipboard updated!\n')
+    except Exception as e:
+        print(f"Error updating clipboard: {e}")
+        sys.exit(1)
 
 def key_gen(key):
-    """
-    generate a unique numeric from string or return a default key
-    @param key
-    @return number
-    """
-
     if key:
-        return abs(hash(''.join(key)))
+      passphrase = key.encode()  # Encode the passphrase to bytes
+      # Use SHA-256 hash function to hash the passphrase
+      hashed_passphrase = hashlib.sha256(passphrase).digest()
+      # Fernet keys need to be 32 bytes long, so we take the first 32 bytes of the SHA-256 hash
+      # Then, encode the key using URL-safe Base64
+      return base64.urlsafe_b64encode(hashed_passphrase[:32])
     try:
-        with open(os.path.join(os.path.expanduser('~'),
-                               '.flprc')) as file_handle:
-
+        with open(os.path.join(os.path.expanduser('~'), '.flprc')) as file_handle:
             content = file_handle.readlines()
         if content:
-            key = abs(hash(''.join(content)))
+            return Fernet.generate_key()
     except IOError:
-        sys.stdout.writelines('\nPlease use the -k [KEY] switch, or Optional \
-                ~/.flprc and a content\n')
-        return None
-
-    return key
-
+        print('\nPlease use the -k [KEY] switch, or create ~/.flprc with a key\n')
+        sys.exit(1)
 
 def encode_string(chars, key):
-    """
-    Encrypts a string of chars with the key provided
-    @param chars string
-    @param key number
-    @return sting
-    """
-    chars = [
-        hex(ord(char[1]) ^ ((char[0] << 8) + key)) for char in enumerate(chars)
-    ]
-
-    cipher = ''.join(chars)
-    return cipher.replace('0x', 'r') + "=="
-
+    fernet = Fernet(key)
+    return fernet.encrypt(chars.encode()).decode()
 
 def decode_cipher(chars, key):
-    """
-    Decrypts a string of chars with the key provided
-    @param chars string
-    @param key number
-    @return sting
-    """
+    fernet = Fernet(key)
+    try:
+        return fernet.decrypt(chars.encode()).decode()
+    except Exception:
+        print('\nYour cipher is corrupted or your key does not match!\n')
+        sys.exit(1)
 
-    chars = chars.replace('=', '')
-    hexico = chars.split('r')[1:]
-    for chunk in enumerate(hexico):
-        try:
-            hexico[chunk[0]] = chr(
-                int('0x' + chunk[1], 16) ^ ((chunk[0] << 8) + key))
-        except ValueError:
-            sys.stdout.writelines('\nYou cipher is corrupted or your key\
-                    does not match!\n')
-            return ''
-    return ''.join(hexico)
-
-
-def main(args):
-    # return 1
-    """
-    Flipper is simple string Encryption programme
-    Encrypts or decrypt a string
-
-    Positional arguments:
-    STRING             A string of characters or to process
-
-    Optional arguments:
-    -h, --help         show this help message and exit
-    -c, --clip         Process content of clip, use with care
-    -k KEY, --key KEY  Encryption key (default: uses text content in (~/.flprc)
-                        as key)
-    -s, --silent       stop print to standard out
-    """
+def process_string(args):
+  
     key = key_gen(args.key)
-    if not key:
-        return 1
+    print("======>")  
+    print(args.key, key)
+    print("======>")
 
     if not args.chars:
         chars = get_clipboard_data()
     else:
         chars = args.chars
 
-    len_of_word = len(chars)
-    if len_of_word > 0 and chars[-2:] == '==':
-        cipher = decode_cipher(chars, key)
+    if chars[-2:] == '==':
+        result = decode_cipher(chars, key)
     else:
-        cipher = encode_string(chars, key)
-
-        print(len_of_word, chars, cipher)
-
-    # set_clipboard_data(cipher)
+        result = encode_string(chars, key)
 
     if not args.silent:
-        sys.stdout.writelines("\n" + cipher + "\n")
+        print("\n" + result + "\n")
+    if args.clip:
+        set_clipboard_data(result)
 
+def main():
+    parser = argparse.ArgumentParser(description='Encrypt or decrypt a string.')
+    parser.add_argument('-c', '--clip', action='store_true', help='Process content of clipboard, use with care')
+    parser.add_argument('-k', '--key', type=str, help='Encryption key (default: uses text content in ~/.flprc as key)')
+    parser.add_argument('-s', '--silent', action='store_true', help='Stop printing to standard out')
+    parser.add_argument('chars', metavar='STRING', type=str, nargs='?', help='String of characters to process')
+    args = parser.parse_args()
+    process_string(args)
 
 if __name__ == "__main__":
-    ARGS_PARSER = argparse.ArgumentParser(description='Encrypts or\
-            decrypt a string')
-
-    ARGS_PARSER.add_argument('-c',
-                             '--clip',
-                             dest='clip',
-                             action='store_true',
-                             help='Process content of clip, use with care')
-
-    ARGS_PARSER.add_argument('-k',
-                             '--key',
-                             dest='key',
-                             type=str,
-                             help='Encryption key (default: uses text content \
-                                in (~/.flprc) as key)')
-
-    ARGS_PARSER.add_argument('-s',
-                             '--silent',
-                             dest='silent',
-                             action='store_true',
-                             help='stop print to standard out')
-
-    ARGS_PARSER.add_argument('chars',
-                             metavar='STRING',
-                             type=str,
-                             help='A string of characters or to process')
-
-    main(ARGS_PARSER.parse_args())
+    main()
+  

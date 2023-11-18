@@ -1,16 +1,8 @@
 #! /bin/bash
 # Author: Aaron
-# Script: Your Script Name
-# Date: (Today's Date)
-# Description: (Brief description of the script)
-
-# Your code here
-# Author: Aaron
-# Script: SSH manager adds, list or remove host from your ssh config 
-# Sun Oct 22 15:13:59 BST 2023
-# Description: (Brief description of the script)
-
-# Your code here
+# Script: sshine.sh 
+# Date: Thu Nov  9 06:59:26 GMT 2023
+# Description: automate and manage multiple ssh connections and configurations
 
 
 #!/bin/bash
@@ -45,9 +37,42 @@ function delete_entry {
   echo "Entry for $1 deleted."
 }
 
+
 function list_entries {
-  grep "Host " $SSH_CONFIG
+  local entries=($(awk '/^Host / && !/^Host \*/ {print $2}' "$SSH_CONFIG"))
+  local opt
+  local hostname
+  local keyfile
+
+  echo "Select a host to connect to (or press 'Ctrl+C' to cancel):"
+  select opt in "${entries[@]}"; do
+    if [ -n "$opt" ]; then
+      hostname=$(awk -v hostalias="$opt" '$0 ~ "^Host " hostalias {flag=1; next} flag && /HostName/ {print $2; flag=0}' "$SSH_CONFIG")
+      keyfile=$(awk -v hostalias="$opt" '$0 ~ "^Host " hostalias {flag=1; next} flag && /IdentityFile/ {print $2; flag=0}' "$SSH_CONFIG")
+      echo $hostname
+      if [ -z "$keyfile" ]; then
+        password=$(pass "ssh/$opt")
+        if [ -z "$password" ]; then
+          echo "Password for $opt does not exist in pass."
+          break
+        fi
+        expect <<EOD
+spawn ssh $hostname
+expect "assword:"
+send "$password\r"
+interact
+EOD
+      else
+        ssh -i "$keyfile" $hostname
+      fi
+    else
+      echo "No valid option selected."
+      break
+    fi
+    return
+  done
 }
+
 
 function search_entries {
   grep "Host " $SSH_CONFIG | grep "$1"

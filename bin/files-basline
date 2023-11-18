@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Check if a parameter was provided
+if [ -z "$1" ]; then
+    echo "Error: Missing directory parameter."
+    echo "Usage: $0 <directory>"
+    exit 1
+fi
+
+SYSNAME="$(uname -n)_$(date +'%m-%d-%Y')"
+
+sudo  find $1 -type f  | xargs sha1sum > "${SYSNAME}_basline.text" 2> "${SYSNAME}_error.text" /;

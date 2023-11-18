@@ -18,29 +18,10 @@ zsh/oh-my-zsh/cache/.zsh-update
 
 *.DS_Store
 
-bin/asmfmt
-bin/dlv
-bin/errcheck
-bin/fillstruct
-bin/gocode-gomod
-bin/godef
-bin/gogetdoc
-bin/goimports
-bin/golangci-lint
-bin/golint
-bin/gometalinter
-bin/gomodifytags
-bin/gopls
-bin/gorename
-bin/gotags
-bin/guru
-bin/hello
-bin/iferr
-bin/impl
-bin/keyify
-bin/motion
-bin/order
-bin/revive
-bin/staticcheck
-pkg/
 
+bin/cyber-ops-with-bash/
+bin/londonVMs/
+bin/source/
+bin/sshine-backup
+
+*.envrc
