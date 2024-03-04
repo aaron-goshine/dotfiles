@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Check if at least two arguments are provided
+if [ "$#" -lt 2 ]; then
+    echo "Usage: $0 source_file target_directory..."
+    exit 1
+fi
+
+# Source file to be copied
+SOURCE_FILE=$1
+
+# Loop over all directories and copy the file
+for DIR in "${@:2}"; do
+    cp "$SOURCE_FILE" "$DIR"
+done
+

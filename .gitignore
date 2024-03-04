@@ -13,6 +13,7 @@ vim/plug/*
 vim/init.vim
 vim/sessions/*
 vim/undo/*
+vim/view/*
 *server.pem
 zsh/oh-my-zsh/cache/.zsh-update
 
