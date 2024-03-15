@@ -10,6 +10,9 @@ nnoremap go o<Esc>k
 nnoremap gO O<Esc>j
 nnoremap * :let stay_star_view = winsaveview()<cr>*:call winrestview(stay_star_view)<cr>
 
+nnoremap H ^
+nnoremap L $
+
 " Window Movement
 nnoremap gh :WriteBufferIfNecessary<CR>:wincmd h<CR>
 nnoremap gj :WriteBufferIfNecessary<CR>:wincmd j<CR>

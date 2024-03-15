@@ -106,7 +106,6 @@ hi IndentGuidesEven guibg=green ctermbg=4
 hi IndentGuidesOdd  ctermbg=black
 hi IndentGuidesEven ctermbg=darkgrey
 "=========================================
-Plug 'ternjs/tern_for_vim'
 
 Plug 'ryanoasis/vim-devicons'
 Plug 'ervandew/supertab'

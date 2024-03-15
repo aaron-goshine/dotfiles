@@ -21,10 +21,10 @@ if has("autocmd")
 endif
 
 " Language-specific settings
-autocmd FileType html,jsx,css,javascript,typescript,yaml setlocal ts=2 sts=2 sw=2 expandtab
-autocmd FileType python,php setlocal ts=4 sts=4 sw=4 expandtab
+autocmd FileType [html,jsx,css,javascript,typescript,yaml] setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType [python,php] setlocal ts=4 sts=4 sw=4 expandtab
 autocmd FileType [javascript,typescript,css,html,python,yaml,rust] setlocal listchars=tab:\|\
-autocmd FileType yaml,json,go setlocal nospell
+autocmd FileType [yaml,json,go] setlocal nospell
 autocmd BufNewFile * call LoadTemplate()
 autocmd BufEnter * silent! lcd %:p:h
 
