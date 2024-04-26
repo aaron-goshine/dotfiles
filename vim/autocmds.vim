@@ -21,12 +21,23 @@ if has("autocmd")
 endif
 
 " Language-specific settings
-autocmd FileType [html,jsx,css,javascript,typescript,yaml] setlocal ts=2 sts=2 sw=2 expandtab
-autocmd FileType [python,php] setlocal ts=4 sts=4 sw=4 expandtab
-autocmd FileType [javascript,typescript,css,html,python,yaml,rust] setlocal listchars=tab:\|\
-autocmd FileType [yaml,json,go] setlocal nospell
-autocmd BufNewFile * call LoadTemplate()
-autocmd BufEnter * silent! lcd %:p:h
+au FileType html,jsx,css,javascript,typescript,yaml setlocal ts=2 sts=2 sw=2 expandtab
+au FileType python,php setlocal ts=4 sts=4 sw=4 expandtabau BufRead,BufNewFile *.yaml,*.yml setlocal nospell
+
+au FileType yaml setlocal nospell
+au FileType json setlocal nospell
+au FileType yml setlocal nospell
+
+au FileType javascript setlocal listchars=tab:\|\
+au FileType typescript setlocal listchars=tab:\|\
+au FileType css setlocal listchars=tab:\|\
+au FileType html setlocal listchars=tab:\|\
+au FileType python setlocal listchars=tab:\|\
+au FileType yaml setlocal listchars=tab:\|\
+au FileType rust setlocal listchars=tab:\|\
+
+au BufNewFile * call LoadTemplate()
+au BufEnter * silent! lcd %:p:h
 
 " Add current directory to path
 let s:default_path = escape(&path, '\ ')

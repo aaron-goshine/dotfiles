@@ -12,6 +12,8 @@ nnoremap * :let stay_star_view = winsaveview()<cr>*:call winrestview(stay_star_v
 
 nnoremap H ^
 nnoremap L $
+vmap H ^
+vmap L $
 
 " Window Movement
 nnoremap gh :WriteBufferIfNecessary<CR>:wincmd h<CR>
